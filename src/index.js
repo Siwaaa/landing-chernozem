@@ -1,1 +1,1 @@
-import { swiper } from "./blocks/projects/carusel.js";
+import { swiper } from "./components/carousel/carousel.js";
