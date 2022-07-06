@@ -1,0 +1,1 @@
+import { swiper } from "./blocks/projects/carusel.js";

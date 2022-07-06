@@ -1,0 +1,82 @@
+@import "./font.css";
+@import "./reset.css";
+@import "./blocks/**/*.pcss";
+
+html {
+  font-family: 'Mont', sans-serif;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 16px;
+  @media (--sm) {
+    font-size: 14px;
+  }
+}
+b {
+  font-weight: 600;
+}
+:root {
+  /* color */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #9F9FA1;
+  --color-blue: #343D58;
+  /* font  */
+  --fz: 14px;
+  --fz-btn: 16px;
+  --fz-h4: 20px;
+  --fz-h2: 36px;
+  /* content */
+  --content-width: 1200px;
+  --container-padding-h: 80px;
+  --container-padding-w: 30px;
+  --border-radius: 10px;
+
+  @media (--xl) {
+    
+  }
+  @media (--lg) {
+    --fz-h2: 28px;
+    --fz-btn: 14px;
+    --container-padding-h: 60px;
+  }
+  @media (--md) {
+    --fz-btn: 14px;
+    --fz-h4: 18px;
+    --container-padding-w: 20px;
+  }
+  @media (--sm) {
+    --container-padding-w: 10px;
+    --container-padding-h: 50px;
+  }
+  @media (--xs) {
+    --fz-h2: 24px;
+  }
+}
+.container {
+  max-width: var(--content-width);
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: var(--container-padding-w);
+  padding-right: var(--container-padding-w);
+  padding-bottom: var(--container-padding-h);
+}
+
+/* Animation */
+*[data-animate-on-scroll] {
+  opacity: 0;
+}
+*[data-animate-on-scroll=animated] {
+  opacity: 1;
+  animation: wipe-enter 2s;
+}
+
+@keyframes wipe-enter {
+  0% {
+    opacity: 0;
+    transform: translate(0, -20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
