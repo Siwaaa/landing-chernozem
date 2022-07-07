@@ -1,1 +1,1 @@
-import { swiper } from "./components/carousel/carousel.js";
+import { swiper, swiperPartners } from "./components/carousel/carousel.js";

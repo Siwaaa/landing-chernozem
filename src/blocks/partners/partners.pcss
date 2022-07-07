@@ -1,14 +1,15 @@
 .partners {
-  /* ЗАМЕНИТЬ */
-  margin-top: 40px; 
+  margin-bottom: calc(0.5 * var(--container-padding-h));
+
   &__content {
 
   }
   &__item {
-    width: 160px !important;
+    width: 150px !important;
     opacity: 0.3;
     filter: alpha(opacity=30); /* IE8 и ниже */
-    will-change: opacity, transform;
+    backface-visibility: hidden;
+    will-change: opacity, transform, background-color;
     transition: background-color .5s ease-in, 
                 transform .8s ease-in-out,
                 opacity .5s ease-in-out !important;
@@ -19,6 +20,7 @@
 
     &:hover {
       opacity: 1;
+      filter: alpha(opacity=100); /* IE8 и ниже */
       background-color: var(--color-rose) !important;
       transform: scaleX(1.1) translateZ(0) !important; 
 
