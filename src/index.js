@@ -1,13 +1,18 @@
-import { swiper, swiperPartners } from "./components/carousel/carousel.js";
+import { swiperPartners, initSwiperProjects } from "./components/carousel/carousel.js";
 import { toggelMenuMobile } from "./components/carousel/burger.js";
 
 const radiosFilter = document.querySelectorAll('input[type=radio][name="filter"]');
+let currentSwiperProjects = null
+let currentProjectID = null
 
 document.addEventListener("DOMContentLoaded", startedCheck);
 
-// Проверка выбранного пункта меню 
-// при первоначальной загрузке 
-// и инициализация моб меню
+/*
+* Проверка выбранного пункта меню
+* при первоначальной загрузке.
+*
+* И инициализация моб меню
+*/ 
 function startedCheck() {
   toggelMenuMobile()
   checkedNav()
@@ -17,18 +22,34 @@ function checkedNav() {
   // запустить спинер пока не отрисуется swiper
   radiosFilter.forEach(e => {
     if(e.checked) {
-      initSwiper(e.value)
+      currentProjectID = e.value
+      currentSwiperProjects = initSwiperProjects(e.value)
+      // завершить спинер
     }
   })
 }
 
-// Проверка изменения меню
+/*
+* Проверка изменения выбранного пункта меню.
+*
+* На входе id нового выбранного пункта
+*/ 
 function changeHandlerFilter(event) {
   if (this.value) {
-    // 1 удаляем swiper
+    // 1 удаляем swiper экземпляр
+    if(currentSwiperProjects) {
+      currentSwiperProjects.destroy()
+      document.getElementById(currentProjectID).style.display = 'none'
+    } else {
+      console.log('Ошибка удаления слайдера');
+      return false
+    }
+    
     // 2 запускаем спинер пока не отрисуется swiper
-    console.log(this.value);
-    // 3 меняем swiper 
+
+    // 3 меняем текущий swiper 
+    currentSwiperProjects = initSwiperProjects(this.value)
+    currentProjectID = this.value
   }
 }
 Array.prototype.forEach.call(radiosFilter, function (radio) {

@@ -8,13 +8,13 @@ header.header.container
         input(type="radio" id="filter_1" name="filter" value="animation")
         label(for="filter_1") Анимация
       li
-        input(type="radio" id="filter_2" name="filter" value="3dpers")
+        input(type="radio" id="filter_2" name="filter" value="pers3d")
         label(for="filter_2") 3D персонажи
       li
         input(type="radio" id="filter_3" name="filter" value="filming" checked)
         label(for="filter_3") Съёмки
       li
-        input(type="radio" id="filter_4" name="filter" value="3danimation")
+        input(type="radio" id="filter_4" name="filter" value="animation3d")
         label(for="filter_4") 3D анимация
       li
         input(type="radio" id="filter_5" name="filter" value="colors")
@@ -29,9 +29,21 @@ header.header.container
       .filter-mobile__line.nav-line__down
     .filter-menu 
       ul.filter-menu__content 
-        li Анимация
-        li 3D персонажи
-        li Съёмки
-        li 3D анимация
-        li Цветокоррекция
-        li Награды
+        li
+          input(type="radio" id="filter_mob_1" name="filter" value="animation")
+          label(for="filter_mob_1") Анимация
+        li
+          input(type="radio" id="filter_mob_2" name="filter" value="pers3d")
+          label(for="filter_mob_2") 3D персонажи
+        li
+          input(type="radio" id="filter_mob_3" name="filter" value="filming" checked)
+          label(for="filter_mob_3") Съёмки
+        li
+          input(type="radio" id="filter_mob_4" name="filter" value="animation3d")
+          label(for="filter_mob_4") 3D анимация
+        li
+          input(type="radio" id="filter_mob_5" name="filter" value="colors")
+          label(for="filter_mob_5") Цветокоррекция
+        li
+          input(type="radio" id="filter_mob_6" name="filter" value="awards")
+          label(for="filter_mob_6") Награды

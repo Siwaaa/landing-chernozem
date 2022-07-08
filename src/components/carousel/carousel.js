@@ -1,16 +1,7 @@
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 
-// Swiper.use([Autoplay]);
-
-export const swiper = new Swiper('.projects__slider', {
-  slidesPerView: 'auto',
-  spaceBetween: 7,
-  centerInsufficientSlides: true,
-  centeredSlides: true,
-  centeredSlidesBounds: true,
-  speed: 1000,
-});
+const a = document.querySelectorAll('.projects__item.swiper-slide')
 
 export const swiperPartners = new Swiper('.partners__slider', {
   grabCursor: true,
@@ -25,30 +16,43 @@ export const swiperPartners = new Swiper('.partners__slider', {
   // },
 });
 
-swiper.once('slideChange', function () {
-  console.log('slide changed');
-});
+export function initSwiperProjects(id) {
+  document.getElementById(id).style.display = 'block'
+
+  return new Swiper('.projects__slider' + '#' + id, {
+    slidesPerView: 'auto',
+    spaceBetween: 7,
+    centerInsufficientSlides: true,
+    centeredSlides: true,
+    // ХУЕВОЕ свойство
+    centeredSlidesBounds: true, 
+    speed: 1000,
+  });
+}
+
+// swiper.once('slideChange', function () {
+//   console.log('slide changed');
+// });
 
 // swiper.on('transitionEnd', (sw) => {
 //   console.log(sw);
 // })
 
-const a = document.querySelectorAll('.projects__item.swiper-slide')
 
 a.forEach((el, index) => {
   el.addEventListener('mouseleave', e => {
     const currentItem = e.target;
     const video = currentItem.querySelector('.lazy-video')
 
-    currentItem.querySelector('.projects__text').animate({ 
-      opacity: '0', visibility: 'hidden' 
+    currentItem.querySelector('.projects__text').animate({
+      opacity: '0', visibility: 'hidden'
     }, {
       duration: 400,
       iterations: 1,
       fill: 'forwards',
     });
     currentItem.animate({
-       opacity: '0', visibility: 'hidden' 
+      opacity: '0', visibility: 'hidden'
     }, {
       pseudoElement: '::before',
       duration: 400,
@@ -56,9 +60,9 @@ a.forEach((el, index) => {
       fill: 'forwards',
     })
 
-    setTimeout(()=> {
-      video.animate({ 
-        opacity: '0', visibility: 'hidden' 
+    setTimeout(() => {
+      video.animate({
+        opacity: '0', visibility: 'hidden'
       }, {
         duration: 800,
         iterations: 1,
@@ -96,7 +100,7 @@ a.forEach((el, index) => {
       fill: "forwards",
     })
 
-    setTimeout(()=> {
+    setTimeout(() => {
       const video = currentItem.querySelector('.lazy-video')
       const videoSource = currentItem.querySelector('.lazy-video > source')
       const newSrc = videoSource.dataset.src
@@ -115,7 +119,7 @@ a.forEach((el, index) => {
       })
 
       video.play()
-      
+
     }, 2000)
   })
 })
