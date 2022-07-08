@@ -2,23 +2,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 16px;
+  flex-basis: 5%;
   font-weight: 200;
   color: #898989;
-  margin-bottom: 20px;
+
+  @media (--sm) {
+    font-size: 12px;
+  }
+  @media (--xs) {
+    font-size: 10px;
+  }
 
   &__social {
     margin-right: 20px;
     margin-left: 20px;
 
+    @media (--sm) {
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+
     & > a {
       &:first-child {
         margin-right: 15px;
+
+        @media (--sm) {
+          margin-right: 10px;
+        }
       }
       & img {
         width: 25px;
         height: 25px;
         object-fit: contain;
+
+        @media (--sm) {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }

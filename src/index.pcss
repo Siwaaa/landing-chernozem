@@ -12,8 +12,18 @@ html {
     font-size: 14px;
   }
 }
-b {
-  font-weight: 600;
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed; 
+  left: 0px; 
+  right: 0px; 
+  height: 100%; 
+  width: 100%;
+  overflow: hidden;
+  min-height: 100vh;
 }
 :root {
   /* color */
@@ -23,61 +33,36 @@ b {
   --color-blue: #343D58;
   --color-rose: #FF355A;
   /* font  */
-  --fz: 14px;
   --fz-btn: 16px;
-  --fz-h4: 20px;
-  --fz-h2: 36px;
+  --fz-h2: 32px;
   /* content */
   --content-width: 1920px;
-  --container-padding-h: 100px;
+  --container-padding-h: 4%;
   --container-padding-w: 30px;
-  --border-radius: 10px;
 
-  @media (--xl) {
-    
+  @media (--2xl) {
+    --fz-h2: 26px;
   }
-  @media (--lg) {
-    --fz-h2: 28px;
-    --fz-btn: 14px;
-    --container-padding-h: 60px;
+  @media (--xl) {
+    --fz-h2: 22px;
   }
   @media (--md) {
     --fz-btn: 14px;
-    --fz-h4: 18px;
     --container-padding-w: 20px;
   }
   @media (--sm) {
+    --container-padding-h: 8%;
     --container-padding-w: 10px;
-    --container-padding-h: 50px;
   }
   @media (--xs) {
-    --fz-h2: 24px;
+    --fz-h2: 20px;
   }
 }
 .container {
+  width: 100%;
   max-width: var(--content-width);
   margin-right: auto;
   margin-left: auto;
   padding-left: var(--container-padding-w);
   padding-right: var(--container-padding-w);
-}
-
-/* Animation */
-*[data-animate-on-scroll] {
-  opacity: 0;
-}
-*[data-animate-on-scroll=animated] {
-  opacity: 1;
-  animation: wipe-enter 2s;
-}
-
-@keyframes wipe-enter {
-  0% {
-    opacity: 0;
-    transform: translate(0, -20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
 }

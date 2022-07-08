@@ -17,7 +17,7 @@ export const swiperPartners = new Swiper('.partners__slider', {
   loop: true,
   slidesPerView: 'auto',
   spaceBetween: 40,
-  speed: 2000,
+  speed: 1500,
   // autoplay: {
   //   delay: 0,
   //   disableOnInteraction: false,
@@ -78,7 +78,7 @@ a.forEach((el, index) => {
       { opacity: '1', visibility: 'visible' }
     ], {
       delay: 1400,
-      duration: 2400,
+      duration: 2000,
       iterations: 1,
       easing: "ease-in-out",
       fill: "forwards",
@@ -90,7 +90,7 @@ a.forEach((el, index) => {
     ], {
       pseudoElement: '::before',
       delay: 800,
-      duration: 1800,
+      duration: 1000,
       iterations: 1,
       easing: "cubic-bezier(.455, .03, .515, .955)",
       fill: "forwards",
@@ -119,3 +119,26 @@ a.forEach((el, index) => {
     }, 2000)
   })
 })
+
+
+// const alarm = {
+//   remind: function(aMessage) {
+//     alert(aMessage);
+//     this.timeoutID = undefined;
+//   },
+
+//   setup: function() {
+//     if (typeof this.timeoutID === 'number') {
+//       this.cancel();
+//     }
+
+//     this.timeoutID = setTimeout(function(msg) {
+//       this.remind(msg);
+//     }.bind(this), 1000, 'Wake up!');
+//   },
+
+//   cancel: function() {
+//     clearTimeout(this.timeoutID);
+//   }
+// };
+// window.addEventListener('click', () => alarm.setup() );
