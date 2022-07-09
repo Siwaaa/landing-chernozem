@@ -23,7 +23,8 @@ html {
   height: 100%; 
   width: 100%;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 100vh; /* Поддержка старых браузером */
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 :root {
   /* color */
@@ -65,7 +66,4 @@ html {
   margin-left: auto;
   padding-left: var(--container-padding-w);
   padding-right: var(--container-padding-w);
-}
-.no-transition {
-  transition: none !important;
 }

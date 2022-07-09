@@ -20,7 +20,7 @@ export function closeMenu() {
 function bugFixMenu() {
   if (menuMobile.classList.contains('animation-menu')) {
     menuMobile.querySelectorAll('li').forEach(e => {
-      e.style.transition = 'all 0.5s ease-in-out 0s'
+      e.style.transition = 'all 0.6s ease-in-out 0s'
     })
   } else {
     menuMobile.querySelectorAll('li').forEach(e => {

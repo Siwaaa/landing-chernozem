@@ -66,3 +66,11 @@ function changeHandlerFilter(event) {
 Array.prototype.forEach.call(radiosFilter, function (radio) {
   radio.addEventListener('change', changeHandlerFilter);
 });
+
+
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  // height: calc(var(--vh, 1vh) * 100);
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
