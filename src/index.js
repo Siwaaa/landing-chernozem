@@ -1,5 +1,5 @@
 import { swiperPartners, initSwiperProjects } from "./components/carousel/carousel.js";
-import { toggelMenuMobile } from "./components/carousel/burger.js";
+import { toggelMenuMobile, closeMenu } from "./components/carousel/burger.js";
 
 const radiosFilter = document.querySelectorAll('input[type=radio][name="filter"]');
 let currentSwiperProjects = null
@@ -40,6 +40,8 @@ function changeHandlerFilter(event) {
     if(currentSwiperProjects) {
       currentSwiperProjects.destroy()
       document.getElementById(currentProjectID).style.display = 'none'
+      // и закрываем меню, если на мобильном
+      closeMenu()
     } else {
       console.log('Ошибка удаления слайдера');
       return false

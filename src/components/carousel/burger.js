@@ -7,3 +7,8 @@ export function toggelMenuMobile() {
     triggerBurger.classList.toggle('activeted-burger')
   })
 }
+
+export function closeMenu() {
+  menuMobile.classList.remove('animation-menu')
+  triggerBurger.classList.remove('activeted-burger')
+}
