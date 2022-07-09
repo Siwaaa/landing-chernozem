@@ -1,5 +1,7 @@
-import Swiper from 'swiper';
+import Swiper, {Lazy} from 'swiper';
 import 'swiper/swiper-bundle.min.css';
+
+Swiper.use(Lazy)
 
 const a = document.querySelectorAll('.projects__item.swiper-slide')
 
@@ -22,11 +24,19 @@ export function initSwiperProjects(id) {
   return new Swiper('.projects__slider' + '#' + id, {
     slidesPerView: 'auto',
     spaceBetween: 7,
+    // CSSWidthAndHeight: true,
     centerInsufficientSlides: true,
     centeredSlides: true,
     // ХУЕВОЕ свойство
     centeredSlidesBounds: true, 
     speed: 1000,
+    watchSlidesProgress: true,
+    preloadImages: false,
+    lazy: {
+      enabled: true,
+      checkInView: true
+    },
+    
   });
 }
 

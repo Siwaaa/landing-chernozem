@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", startedCheck);
 * И инициализация моб меню
 */ 
 function startedCheck() {
+  replaceImg()
   toggelMenuMobile()
   checkedNav()
 }
@@ -27,6 +28,14 @@ function checkedNav() {
       // завершить спинер
     }
   })
+}
+
+function replaceImg() {
+  const lazyloadImages = document.querySelectorAll("#filming img[data-src]");
+  lazyloadImages.forEach(function (img) {
+    const reg = img.nextSibling.textContent.split(/"([^"]*)"/g);
+    img.dataset.src = reg[1];
+  });
 }
 
 /*
