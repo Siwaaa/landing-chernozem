@@ -4,7 +4,7 @@
   "source": [
     "/src/index.pug"
   ],
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "> 0.5%, last 5 versions, not dead",
   "scripts": {
     "serve": "parcel serve --port 8080 --open chrome",
     "build": "rm -rf public_html/* && rm -rf .parcel-cache/* && parcel build --public-url ./ --dist-dir public_html && cp -a src/assets/. public_html"

@@ -111,24 +111,37 @@ a.forEach((el, index) => {
     })
 
     setTimeout(() => {
-      const video = currentItem.querySelector('.lazy-video')
-      const videoSource = currentItem.querySelector('.lazy-video > source')
-      const newSrc = videoSource.dataset.src
-      videoSource.setAttribute('src', newSrc)
-      video.load();
-
-      video.animate([
-        { opacity: '0', visibility: 'hidden' },
-        { opacity: '1', visibility: 'visible' }
-      ], {
-        delay: 3000,
-        duration: 800,
-        iterations: 1,
-        easing: "ease-in-out",
-        fill: "forwards",
-      })
-
-      video.play()
+      try {
+        const video = currentItem.querySelector('.lazy-video')
+        const videoSource = currentItem.querySelector('.lazy-video > source')
+        const newSrc = videoSource.dataset.src
+        videoSource.setAttribute('src', newSrc)
+        video.load();
+  
+        video.animate([
+          { opacity: '0', visibility: 'hidden' },
+          { opacity: '1', visibility: 'visible' }
+        ], {
+          delay: 3000,
+          duration: 800,
+          iterations: 1,
+          easing: "ease-in-out",
+          fill: "forwards",
+        })
+  
+        video.play()
+      } catch (error) {
+        document.getElementById('vimeo').animate([
+          { opacity: '0', visibility: 'hidden' },
+          { opacity: '1', visibility: 'visible' }
+        ], {
+          delay: 3000,
+          duration: 800,
+          iterations: 1,
+          easing: "ease-in-out",
+          fill: "forwards",
+        })
+      }
 
     }, 2000)
   })
