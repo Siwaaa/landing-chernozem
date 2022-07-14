@@ -19,7 +19,20 @@ export const swiperPartners = new Swiper('.partners__slider', {
 });
 
 export function initSwiperProjects(id) {
-  document.getElementById(id).style.display = 'block'
+  
+  const animateID = document.getElementById(id).animate([
+    { opacity: '0', visibility: 'hidden', transform: 'translate3d(15%, 0,0)' },
+    { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)'},
+  ], {
+    duration: 1200,
+    iterations: 1,
+    easing: "cubic-bezier(.455, .03, .515, .955)",
+    fill: "forwards",
+  })
+
+  // animateID.onfinish = event => {
+    document.getElementById(id).style.display = 'block'
+  // };
 
   return new Swiper('.projects__slider' + '#' + id, {
     slidesPerView: 'auto',
@@ -50,6 +63,68 @@ export function initSwiperProjects(id) {
 
 
 a.forEach((el, index) => {
+    el.addEventListener('mouseenter', e => {
+    const currentItem = e.target;
+
+    currentItem.querySelector('.projects__text').animate([
+      { opacity: '0', visibility: 'hidden' },
+      { opacity: '1', visibility: 'visible' }
+    ], {
+      delay: 800,
+      duration: 1000,
+      iterations: 1,
+      easing: "ease-in-out",
+      fill: "forwards",
+    })
+
+    currentItem.animate([
+      { opacity: '0', visibility: 'hidden' },
+      { opacity: '1', visibility: 'visible' }
+    ], {
+      pseudoElement: '::before',
+      delay: 0,
+      duration: 1000,
+      iterations: 1,
+      easing: "cubic-bezier(.455, .03, .515, .955)",
+      fill: "forwards",
+    })
+
+    setTimeout(() => {
+      try {
+        const video = currentItem.querySelector('.lazy-video')
+        const videoSource = currentItem.querySelector('.lazy-video > source')
+        const newSrc = videoSource.dataset.src
+        videoSource.setAttribute('src', newSrc)
+        video.load();
+  
+        video.animate([
+          { opacity: '0', visibility: 'hidden' },
+          { opacity: '1', visibility: 'visible' }
+        ], {
+          delay: 3000,
+          duration: 1000,
+          iterations: 1,
+          easing: "ease-in-out",
+          fill: "forwards",
+        })
+  
+        video.play()
+      } catch (error) {
+        document.getElementById('vimeo').animate([
+          { opacity: '0', visibility: 'hidden' },
+          { opacity: '1', visibility: 'visible' }
+        ], {
+          delay: 3000,
+          duration: 800,
+          iterations: 1,
+          easing: "ease-in-out",
+          fill: "forwards",
+        })
+      }
+
+    }, 1000)
+  })
+
   el.addEventListener('mouseleave', e => {
     const currentItem = e.target;
     const video = currentItem.querySelector('.lazy-video')
@@ -57,10 +132,11 @@ a.forEach((el, index) => {
     currentItem.querySelector('.projects__text').animate({
       opacity: '0', visibility: 'hidden'
     }, {
-      duration: 400,
+      duration: 200,
       iterations: 1,
       fill: 'forwards',
     });
+    
     currentItem.animate({
       opacity: '0', visibility: 'hidden'
     }, {
@@ -81,69 +157,7 @@ a.forEach((el, index) => {
       })
 
       video.pause()
-    }, 2500)
-  })
-
-  el.addEventListener('mouseenter', e => {
-    const currentItem = e.target;
-
-    currentItem.querySelector('.projects__text').animate([
-      { opacity: '0', visibility: 'hidden' },
-      { opacity: '1', visibility: 'visible' }
-    ], {
-      delay: 1400,
-      duration: 2000,
-      iterations: 1,
-      easing: "ease-in-out",
-      fill: "forwards",
-    })
-
-    currentItem.animate([
-      { opacity: '0', visibility: 'hidden' },
-      { opacity: '1', visibility: 'visible' }
-    ], {
-      pseudoElement: '::before',
-      delay: 800,
-      duration: 1000,
-      iterations: 1,
-      easing: "cubic-bezier(.455, .03, .515, .955)",
-      fill: "forwards",
-    })
-
-    setTimeout(() => {
-      try {
-        const video = currentItem.querySelector('.lazy-video')
-        const videoSource = currentItem.querySelector('.lazy-video > source')
-        const newSrc = videoSource.dataset.src
-        videoSource.setAttribute('src', newSrc)
-        video.load();
-  
-        video.animate([
-          { opacity: '0', visibility: 'hidden' },
-          { opacity: '1', visibility: 'visible' }
-        ], {
-          delay: 3000,
-          duration: 800,
-          iterations: 1,
-          easing: "ease-in-out",
-          fill: "forwards",
-        })
-  
-        video.play()
-      } catch (error) {
-        document.getElementById('vimeo').animate([
-          { opacity: '0', visibility: 'hidden' },
-          { opacity: '1', visibility: 'visible' }
-        ], {
-          delay: 3000,
-          duration: 800,
-          iterations: 1,
-          easing: "ease-in-out",
-          fill: "forwards",
-        })
-      }
-
-    }, 2000)
+    }, 1500)
   })
 })
 

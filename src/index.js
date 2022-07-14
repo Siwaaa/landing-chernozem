@@ -52,8 +52,24 @@ function changeHandlerFilter() {
   if (this.value) {
     // 1 удаляем swiper экземпляр
     if (currentSwiperProjects) {
-      currentSwiperProjects.destroy()
-      document.getElementById(currentProjectID).style.display = 'none'
+      const elementSliderActive = document.getElementById(currentProjectID)
+
+      const animateID = elementSliderActive.animate([
+        { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)'},
+        { opacity: '0', visibility: 'hidden', transform: 'translate3d(-15%, 0,0)'},
+      ], {
+        duration: 500,
+        iterations: 1,
+        easing: "cubic-bezier(.455, .03, .515, .955)",
+        fill: "forwards",
+      })
+
+      // animateID.onfinish = event => {
+        console.log('sdffsd');
+        currentSwiperProjects.destroy()
+        elementSliderActive.style.display = 'none'
+      // };
+
       // закрываем меню, если на мобильном
       closeMenu()
     } else {
@@ -64,8 +80,9 @@ function changeHandlerFilter() {
     // 2 запускаем спинер пока не отрисуется swiper
 
     // 3 меняем текущий swiper 
-    currentSwiperProjects = initSwiperProjects(this.value)
-    currentProjectID = this.value
+      currentSwiperProjects = initSwiperProjects(this.value)
+      currentProjectID = this.value
+
   }
 }
 Array.prototype.forEach.call(radiosFilter, function (radio) {

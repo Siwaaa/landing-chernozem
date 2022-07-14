@@ -12,6 +12,8 @@
   &__slider {
     display: none;
     height: 100%;
+    opacity: 0; 
+    visibility: hidden
   }
 
   &__item {
@@ -19,7 +21,7 @@
     position: relative;
     width: var(--w-project) !important;
     text-align: center;
-    transition: width .8s easeInOutQuad .6s !important;
+    transition: width .8s easeInOutQuad !important;
 
     @media (--2xl) {
       --w-project: 260px;
