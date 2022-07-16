@@ -1,4 +1,4 @@
-import Swiper, {Lazy} from 'swiper';
+import Swiper, { Lazy } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 
 Swiper.use(Lazy)
@@ -19,10 +19,10 @@ export const swiperPartners = new Swiper('.partners__slider', {
 });
 
 export function initSwiperProjects(id) {
-  
+
   const animateID = document.getElementById(id).animate([
     { opacity: '0', visibility: 'hidden', transform: 'translate3d(15%, 0,0)' },
-    { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)'},
+    { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)' },
   ], {
     duration: 1200,
     iterations: 1,
@@ -31,7 +31,7 @@ export function initSwiperProjects(id) {
   })
 
   // animateID.onfinish = event => {
-    document.getElementById(id).style.display = 'block'
+  document.getElementById(id).style.display = 'block'
   // };
 
   return new Swiper('.projects__slider' + '#' + id, {
@@ -41,7 +41,7 @@ export function initSwiperProjects(id) {
     centerInsufficientSlides: true,
     centeredSlides: true,
     // ХУЕВОЕ свойство
-    centeredSlidesBounds: true, 
+    centeredSlidesBounds: true,
     speed: 1000,
     watchSlidesProgress: true,
     preloadImages: false,
@@ -49,7 +49,7 @@ export function initSwiperProjects(id) {
       enabled: true,
       checkInView: true
     },
-    
+
   });
 }
 
@@ -63,7 +63,7 @@ export function initSwiperProjects(id) {
 
 
 a.forEach((el, index) => {
-    el.addEventListener('mouseenter', e => {
+  el.addEventListener('mouseenter', e => {
     const currentItem = e.target;
 
     currentItem.querySelector('.projects__text').animate([
@@ -90,37 +90,25 @@ a.forEach((el, index) => {
     })
 
     setTimeout(() => {
-      try {
-        const video = currentItem.querySelector('.lazy-video')
-        const videoSource = currentItem.querySelector('.lazy-video > source')
-        const newSrc = videoSource.dataset.src
-        videoSource.setAttribute('src', newSrc)
-        video.load();
-  
-        video.animate([
-          { opacity: '0', visibility: 'hidden' },
-          { opacity: '1', visibility: 'visible' }
-        ], {
-          delay: 3000,
-          duration: 1000,
-          iterations: 1,
-          easing: "ease-in-out",
-          fill: "forwards",
-        })
-  
-        video.play()
-      } catch (error) {
-        document.getElementById('vimeo').animate([
-          { opacity: '0', visibility: 'hidden' },
-          { opacity: '1', visibility: 'visible' }
-        ], {
-          delay: 3000,
-          duration: 800,
-          iterations: 1,
-          easing: "ease-in-out",
-          fill: "forwards",
-        })
-      }
+      const video = currentItem.querySelector('.lazy-video')
+      const videoSource = currentItem.querySelector('.lazy-video > source')
+      const newSrc = videoSource.dataset.src
+      videoSource.setAttribute('src', newSrc)
+
+      video.load();
+
+      video.animate([
+        { opacity: '0', visibility: 'hidden' },
+        { opacity: '1', visibility: 'visible' }
+      ], {
+        delay: 3000,
+        duration: 1000,
+        iterations: 1,
+        easing: "ease-in-out",
+        fill: "forwards",
+      })
+
+      video.play()
 
     }, 1000)
   })
@@ -136,7 +124,7 @@ a.forEach((el, index) => {
       iterations: 1,
       fill: 'forwards',
     });
-    
+
     currentItem.animate({
       opacity: '0', visibility: 'hidden'
     }, {
