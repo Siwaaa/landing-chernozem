@@ -3,7 +3,7 @@ import 'swiper/swiper-bundle.min.css';
 
 Swiper.use(Lazy)
 
-const a = document.querySelectorAll('.projects__item.swiper-slide')
+const swiperArrayItems = document.querySelectorAll('.projects__item.swiper-slide')
 
 export const swiperPartners = new Swiper('.partners__slider', {
   grabCursor: true,
@@ -20,6 +20,10 @@ export const swiperPartners = new Swiper('.partners__slider', {
 
 export function initSwiperProjects(id) {
 
+  // 1. Получить текущую ширину экрана
+  // 2. Считать текущую ширину переменной --w-project одного блока
+  // 3. Получить текущее количество видимых блоков
+  // 4. 
   const animateID = document.getElementById(id).animate([
     { opacity: '0', visibility: 'hidden', transform: 'translate3d(15%, 0,0)' },
     { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)' },
@@ -30,9 +34,7 @@ export function initSwiperProjects(id) {
     fill: "forwards",
   })
 
-  // animateID.onfinish = event => {
   document.getElementById(id).style.display = 'block'
-  // };
 
   return new Swiper('.projects__slider' + '#' + id, {
     slidesPerView: 'auto',
@@ -62,7 +64,7 @@ export function initSwiperProjects(id) {
 // })
 
 
-a.forEach((el, index) => {
+swiperArrayItems.forEach((el, index) => {
   el.addEventListener('mouseenter', e => {
     const currentItem = e.target;
 
