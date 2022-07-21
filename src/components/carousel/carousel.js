@@ -1,5 +1,6 @@
 import Swiper, { Lazy } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
+import { getCurrentSwiper } from '../..';
 
 Swiper.use(Lazy)
 
@@ -10,25 +11,16 @@ export const swiperPartners = new Swiper('.partners__slider', {
   loop: true,
   slidesPerView: 'auto',
   spaceBetween: 40,
-  speed: 1500,
-  // autoplay: {
-  //   delay: 0,
-  //   disableOnInteraction: false,
-  //   pauseOnMouseEnter: true,
-  // },
+  speed: 1500
 });
 
 export function initSwiperProjects(id) {
-
-  // 1. Получить текущую ширину экрана
-  // 2. Считать текущую ширину переменной --w-project одного блока
-  // 3. Получить текущее количество видимых блоков
-  // 4. 
+ 
   const animateID = document.getElementById(id).animate([
-    { opacity: '0', visibility: 'hidden', transform: 'translate3d(15%, 0,0)' },
+    { opacity: '0', visibility: 'hidden', transform: 'translate3d(25%, 0,0)' },
     { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)' },
   ], {
-    duration: 1200,
+    duration: 800,
     iterations: 1,
     easing: "cubic-bezier(.455, .03, .515, .955)",
     fill: "forwards",
@@ -42,7 +34,7 @@ export function initSwiperProjects(id) {
     // CSSWidthAndHeight: true,
     centerInsufficientSlides: true,
     centeredSlides: true,
-    // ХУЕВОЕ свойство
+    // ПЛОХОЕ свойство
     centeredSlidesBounds: true,
     speed: 1000,
     watchSlidesProgress: true,
@@ -51,6 +43,8 @@ export function initSwiperProjects(id) {
       enabled: true,
       checkInView: true
     },
+    observer: true,  
+    observeParents: true,
 
   });
 }
@@ -72,8 +66,8 @@ swiperArrayItems.forEach((el, index) => {
       { opacity: '0', visibility: 'hidden' },
       { opacity: '1', visibility: 'visible' }
     ], {
-      delay: 800,
-      duration: 1000,
+      delay: 400,
+      duration: 800,
       iterations: 1,
       easing: "ease-in-out",
       fill: "forwards",
@@ -85,32 +79,41 @@ swiperArrayItems.forEach((el, index) => {
     ], {
       pseudoElement: '::before',
       delay: 0,
-      duration: 1000,
+      duration: 600,
       iterations: 1,
       easing: "cubic-bezier(.455, .03, .515, .955)",
       fill: "forwards",
     })
 
+    const sw = getCurrentSwiper()
+    sw.slideTo(sw.activeIndex, 1000)
+    console.log(sw.activeIndex);
+
     setTimeout(() => {
-      const video = currentItem.querySelector('.lazy-video')
-      const videoSource = currentItem.querySelector('.lazy-video > source')
-      const newSrc = videoSource.dataset.src
-      videoSource.setAttribute('src', newSrc)
+      try {
+        const video = currentItem.querySelector('.lazy-video')
+        const videoSource = currentItem.querySelector('.lazy-video > source')
+        const newSrc = videoSource.dataset.src
+        videoSource.setAttribute('src', newSrc)
+  
+        video.load();
+  
+        video.animate([
+          { opacity: '0', visibility: 'hidden' },
+          { opacity: '1', visibility: 'visible' }
+        ], {
+          delay: 2000,
+          duration: 1000,
+          iterations: 1,
+          easing: "ease-in-out",
+          fill: "forwards",
+        })
+  
+        video.play()
+      } catch (error) {
+        
+      }
 
-      video.load();
-
-      video.animate([
-        { opacity: '0', visibility: 'hidden' },
-        { opacity: '1', visibility: 'visible' }
-      ], {
-        delay: 3000,
-        duration: 1000,
-        iterations: 1,
-        easing: "ease-in-out",
-        fill: "forwards",
-      })
-
-      video.play()
 
     }, 1000)
   })
@@ -136,18 +139,25 @@ swiperArrayItems.forEach((el, index) => {
       fill: 'forwards',
     })
 
-    setTimeout(() => {
-      video.animate({
-        opacity: '0', visibility: 'hidden'
-      }, {
-        duration: 800,
-        iterations: 1,
-        easing: "cubic-bezier(.455, .03, .515, .955)",
-        fill: "forwards",
-      })
+    
 
-      video.pause()
-    }, 1500)
+    setTimeout(() => {
+      try {
+        video.animate({
+          opacity: '0', visibility: 'hidden'
+        }, {
+          duration: 800,
+          iterations: 1,
+          easing: "cubic-bezier(.455, .03, .515, .955)",
+          fill: "forwards",
+        })
+  
+        video.pause()
+      } catch (error) {
+        
+      }
+      
+    }, 1300)
   })
 })
 

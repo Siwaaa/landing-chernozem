@@ -5,6 +5,10 @@ const radiosFilter = document.querySelectorAll('input[type=radio][name="filter"]
 let currentSwiperProjects = null
 let currentProjectID = null
 
+export function getCurrentSwiper() {
+  return currentSwiperProjects
+}
+
 document.addEventListener("DOMContentLoaded", startedCheck);
 window.addEventListener('resize', () => { fixVH() });
 
@@ -16,7 +20,7 @@ window.addEventListener('resize', () => { fixVH() });
 function startedCheck() {
   replaceImgForLazy()
   toggelMenuMobile()
-  checkedNav()
+  checkedFilter()
   fixVH()
 }
 
@@ -27,7 +31,7 @@ function replaceImgForLazy() {
     img.dataset.src = reg[1];
   });
 }
-function checkedNav() {
+function checkedFilter() {
   // запустить спинер пока не отрисуется swiper
   radiosFilter.forEach(e => {
     if (e.checked) {
@@ -39,7 +43,7 @@ function checkedNav() {
 }
 function fixVH() {
   // Решение проблемы с высотой моб браузеров
-  // with: height = calc(var(--vh, 1vh) * 100);
+  // with css: height = calc(var(--vh, 1vh) * 100);
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 }
@@ -50,25 +54,30 @@ function fixVH() {
 */
 function changeHandlerFilter() {
   if (this.value) {
-    // 1 удаляем swiper экземпляр
     if (currentSwiperProjects) {
       const elementSliderActive = document.getElementById(currentProjectID)
 
       const animateID = elementSliderActive.animate([
         { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)'},
-        { opacity: '0', visibility: 'hidden', transform: 'translate3d(-15%, 0,0)'},
+        { opacity: '0', visibility: 'hidden', transform: 'translate3d(-25%, 0,0)'},
       ], {
-        duration: 500,
+        duration: 800,
         iterations: 1,
         easing: "cubic-bezier(.455, .03, .515, .955)",
         fill: "forwards",
       })
 
-      // animateID.onfinish = event => {
-        console.log('sdffsd');
-        currentSwiperProjects.destroy()
+      animateID.onfinish = event => {
+        // 1 удаляем swiper экземпляр
+        currentSwiperProjects.destroy(true, false)
         elementSliderActive.style.display = 'none'
-      // };
+
+        // 2 запускаем спинер пока не отрисуется swiper
+
+        // 3 меняем текущий swiper 
+        currentSwiperProjects = initSwiperProjects(this.value)
+        currentProjectID = this.value
+      };
 
       // закрываем меню, если на мобильном
       closeMenu()
@@ -76,13 +85,6 @@ function changeHandlerFilter() {
       console.log('Ошибка удаления слайдера');
       return false
     }
-
-    // 2 запускаем спинер пока не отрисуется swiper
-
-    // 3 меняем текущий swiper 
-      currentSwiperProjects = initSwiperProjects(this.value)
-      currentProjectID = this.value
-
   }
 }
 Array.prototype.forEach.call(radiosFilter, function (radio) {
