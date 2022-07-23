@@ -69,6 +69,8 @@ function changeHandlerFilter() {
 
       animateID.onfinish = event => {
         // 1 удаляем swiper экземпляр
+        // removeListenSlides(currentSwiperProjects)
+        currentSwiperProjects.detachEvents()
         currentSwiperProjects.destroy(true, false)
         elementSliderActive.style.display = 'none'
 
