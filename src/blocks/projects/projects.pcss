@@ -26,7 +26,7 @@
     @media (--2xl) {
       --w-project: 260px;
     }
-    @media (--sm) {
+    @media (--sm), (max-height: 650px) {
       --w-project: 160px;
     }
 
@@ -89,6 +89,23 @@
     }
     @media (--xs) {
       display: none;
+    }
+  }
+  &__tags {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    @media (--2xl) {
+      font-size: 14px;
+    }
+
+    & > li {
+      text-decoration: underline;
+
+      &:not(:last-child) {
+        margin-right: 7px;
+      }
     }
   }
 

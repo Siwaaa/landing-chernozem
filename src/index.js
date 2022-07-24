@@ -1,4 +1,4 @@
-import { swiperPartners, initSwiperProjects } from "./components/carousel/carousel.js";
+import { swiperPartners, initSwiperProjects, removeListenSlides } from "./components/carousel/carousel.js";
 import { toggelMenuMobile, closeMenu } from "./components/carousel/burger.js";
 
 const radiosFilter = document.querySelectorAll('input[type=radio][name="filter"]');
@@ -61,7 +61,7 @@ function changeHandlerFilter() {
         { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)'},
         { opacity: '0', visibility: 'hidden', transform: 'translate3d(-25%, 0,0)'},
       ], {
-        duration: 800,
+        duration: 600,
         iterations: 1,
         easing: "cubic-bezier(.455, .03, .515, .955)",
         fill: "forwards",
@@ -69,7 +69,7 @@ function changeHandlerFilter() {
 
       animateID.onfinish = event => {
         // 1 удаляем swiper экземпляр
-        // removeListenSlides(currentSwiperProjects)
+        removeListenSlides(currentSwiperProjects)
         currentSwiperProjects.detachEvents()
         currentSwiperProjects.destroy(true, false)
         elementSliderActive.style.display = 'none'
