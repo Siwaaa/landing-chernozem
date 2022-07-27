@@ -1,5 +1,16 @@
 module.exports = {
   locals: {
-    hello: "world"
+    hello: 'World',
+    listProjects: [
+      {
+        name: 'filming',
+        objects: [
+          {
+            name: 'Толя',
+            description: ''
+          }
+        ]
+      }
+    ]
   }
 };

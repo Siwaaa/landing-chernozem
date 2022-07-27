@@ -1,8 +1,8 @@
-import Swiper, { Lazy } from 'swiper';
+import Swiper, { Lazy, Mousewheel } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { getCurrentSwiper } from '../..';
 
-Swiper.use(Lazy)
+Swiper.use([Lazy, Mousewheel])
 
 let animationVideo = null
 
@@ -34,6 +34,8 @@ export function initSwiperProjects(id) {
   const swiper = new Swiper('.projects__slider' + '#' + id, {
     slidesPerView: 'auto',
     spaceBetween: 7,
+    mousewheel: true,
+    grabCursor: true,
     centerInsufficientSlides: true,
     centeredSlides: true,
     // ПЛОХОЕ свойство
@@ -41,6 +43,7 @@ export function initSwiperProjects(id) {
     speed: 1000,
     watchSlidesProgress: true,
     preloadImages: false,
+    
     lazy: {
       enabled: true,
       checkInView: true
@@ -62,6 +65,17 @@ function listenCurrentSwiper(swiperInstance) {
 
     el.addEventListener('mouseenter', handlerEnterMouse)
     el.addEventListener('mouseleave', handlerLeaveMouse)
+  })
+
+  document.querySelector('.rr').addEventListener('mouseenter', (event) => {
+    if(swiperInstance.isEnd) return false
+   
+    swiperInstance.slideNext(1000)
+  })
+  document.querySelector('.ll').addEventListener('mouseenter', (event) => {
+    if(swiperInstance.isBeginning) return false
+  
+    swiperInstance.slidePrev(1000)
   })
 }
 
@@ -170,12 +184,6 @@ export function removeListenSlides(swiperInstance) {
 // swiper.once('slideChange', function () {
 //   console.log('slide changed');
 // });
-
-// swiper.on('transitionEnd', (sw) => {
-//   console.log(sw);
-// })
-
-
 
 // const alarm = {
 //   remind: function(aMessage) {

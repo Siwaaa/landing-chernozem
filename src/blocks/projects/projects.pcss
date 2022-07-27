@@ -1,4 +1,5 @@
 .projects {
+  position: relative;
   width: 100%;
   max-height: 68%;
   flex-basis: 70%;
@@ -32,7 +33,6 @@
 
     &:hover {
       width: calc(2*var(--w-project)) !important;
-      cursor: pointer;
 
       @media (--xs) {
         width: calc(1.4*var(--w-project)) !important;
@@ -120,4 +120,31 @@
     visibility: hidden;
     z-index: 20;
   }
+}
+
+
+.oo {
+  position: absolute;
+  content: '';
+  top: 0;
+  display: block;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 0;
+  width: 6%;
+  height: 95%;
+  z-index: 15;
+  cursor: pointer;
+  transition: opacity 0.6s ease-in;
+
+  @media (--lg) {
+    display: none;
+  }
+}
+
+.rr {
+  right: 0;
+}
+
+.ll {
+  left: 0;
 }
