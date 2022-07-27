@@ -40,7 +40,7 @@ export function initSwiperProjects(id) {
     centeredSlides: true,
     // ПЛОХОЕ свойство
     centeredSlidesBounds: true,
-    speed: 1000,
+    speed: 800,
     watchSlidesProgress: true,
     preloadImages: false,
     
