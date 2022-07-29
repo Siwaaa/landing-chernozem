@@ -5,8 +5,12 @@ import { getCurrentSwiper } from '../..';
 Swiper.use([Lazy, Mousewheel])
 
 let animationVideo = null
-
-// const swiperArrayItems = document.querySelectorAll('.projects__item.swiper-slide')
+let animationLastSlide = null
+let animationLastSlide_exit = null
+let intervalID = null
+const sizeSlide = -1 * getComputedStyle(document.querySelector('.projects__item'))
+  .getPropertyValue('--w-project')
+  .replace(/[^0-9]/g, "")
 
 export const swiperPartners = new Swiper('.partners__slider', {
   grabCursor: true,
@@ -43,12 +47,10 @@ export function initSwiperProjects(id) {
     speed: 800,
     watchSlidesProgress: true,
     preloadImages: false,
-    
     lazy: {
       enabled: true,
       checkInView: true
     },
-    // observer: true,
   });
 
   // включаем прослушку событий у текущего свайпера
@@ -58,29 +60,31 @@ export function initSwiperProjects(id) {
 }
 
 function listenCurrentSwiper(swiperInstance) {
-  swiperInstance.slides.forEach((el, index) => {
-    // const sizeSlide = -1 * getComputedStyle(document.querySelector('.projects__item'))
-    //   .getPropertyValue('--w-project')
-    //   .replace(/[^0-9]/g, "")
 
+  swiperInstance.slides.forEach(el => {
     el.addEventListener('mouseenter', handlerEnterMouse)
     el.addEventListener('mouseleave', handlerLeaveMouse)
   })
 
-  document.querySelector('.rr').addEventListener('mouseenter', (event) => {
-    if(swiperInstance.isEnd) return false
-   
-    swiperInstance.slideNext(1000)
+  document.querySelector('.rr').addEventListener('mouseenter', handlerSlideNext)
+  document.querySelector('.rr').addEventListener('mouseleave', (event) => {
+    clearInterval(intervalID)
   })
-  document.querySelector('.ll').addEventListener('mouseenter', (event) => {
-    if(swiperInstance.isBeginning) return false
-  
-    swiperInstance.slidePrev(1000)
+  document.querySelector('.ll').addEventListener('mouseenter', handlerSlidePrev)
+  document.querySelector('.ll').addEventListener('mouseleave', (event) => {
+    clearInterval(intervalID)
   })
+
+  // swiperInstance.on('slideChange', function () {
+
+  //   console.log('slide changed');
+  // })
 }
 
 function handlerEnterMouse(event) {
   const currentItem = event.target;
+
+  helperResizLastSlide(currentItem);
 
   currentItem.querySelector('.projects__text').animate([
     { opacity: '0', visibility: 'hidden' },
@@ -105,10 +109,6 @@ function handlerEnterMouse(event) {
     fill: "forwards",
   })
 
-  // скролл при наведении
-  // this.slideTo(index, 1600)
-  // console.log(this.activeIndex);
-
   animationVideo = setTimeout(() => {
     try {
       const video = currentItem.querySelector('.lazy-video')
@@ -131,14 +131,16 @@ function handlerEnterMouse(event) {
 
       video.play()
     } catch (error) {
-      throw new Error('Ошибка воспроизведения видео')
+      console.log('video play empty');
     }
   }, 2000)
 }
 
 function handlerLeaveMouse(event) {
   const currentItem = event.target;
-  const video = currentItem.querySelector('.lazy-video')
+  const video = currentItem.querySelector('.lazy-video');
+
+  helperResizLastSlide(currentItem);
 
   currentItem.querySelector('.projects__text').animate({
     opacity: '0', visibility: 'hidden'
@@ -171,8 +173,34 @@ function handlerLeaveMouse(event) {
 
     video.pause()
   } catch (error) {
-    throw new Error('Ошибка остановки видео')
+    console.log('video stop empty');
   }
+}
+
+function handlerSlideNext(event) {
+  swiperInstance = getCurrentSwiper()
+
+  if (swiperInstance.isEnd) return false
+  swiperInstance.slideNext(1000)
+
+  intervalID = setInterval(e => {
+    console.log(swiperInstance.isEnd);
+    if (swiperInstance.isEnd) clearInterval(intervalID)
+    swiperInstance.slideNext(1000)
+  }, 1500)
+}
+
+function handlerSlidePrev(event) {
+  swiperInstance = getCurrentSwiper()
+
+  if (swiperInstance.isBeginning) return false
+  swiperInstance.slidePrev(1000)
+
+  intervalID = setInterval(e => {
+    console.log(swiperInstance.isBeginning);
+    if (swiperInstance.isBeginning) clearInterval(intervalID)
+    swiperInstance.slidePrev(1000)
+  }, 1500)
 }
 
 export function removeListenSlides(swiperInstance) {
@@ -180,10 +208,50 @@ export function removeListenSlides(swiperInstance) {
     el.removeEventListener('mouseenter', handlerEnterMouse)
     el.removeEventListener('mouseleave', handlerLeaveMouse)
   })
+
+  document.querySelector('.rr').removeEventListener('mouseenter', handlerSlideNext)
+  document.querySelector('.ll').removeEventListener('mouseenter', handlerSlidePrev)
 }
-// swiper.once('slideChange', function () {
-//   console.log('slide changed');
-// });
+
+function helperResizLastSlide(slide) {
+  const sw = getCurrentSwiper()
+
+  if (sw.slides[sw.slides.length - 1] === slide && sw.slides[0] !== slide) {
+    currentTranslate = new WebKitCSSMatrix(sw.$wrapperEl[0].style.transform).e
+
+    if (animationLastSlide) {
+
+      if(sw.$wrapperEl[0].getAnimations().length < 2 && !animationLastSlide_exit) {
+        animationLastSlide_exit = sw.$wrapperEl[0].animate({
+          transform: `translate3d(${currentTranslate}px, 0px, 0px)`
+        }, {
+          id: 'tola',
+          duration: 600,
+          easing: "cubic-bezier(.455, .03, .515, .955)",
+          iterations: 1,
+          fill: 'forwards',
+        })
+  
+        animationLastSlide_exit.onfinish = () => {
+          animationLastSlide.cancel()
+          animationLastSlide_exit.cancel()
+          animationLastSlide = null
+          animationLastSlide_exit = null
+        }
+      }
+    } else {
+      animationLastSlide = sw.$wrapperEl[0].animate({
+        transform: `translate3d(${currentTranslate + sizeSlide}px, 0px, 0px)`
+      }, {
+        id: 'maha',
+        duration: 800,
+        easing: "cubic-bezier(.455, .03, .515, .955)",
+        iterations: 1,
+        fill: 'forwards',
+      })
+    }
+  }
+}
 
 // const alarm = {
 //   remind: function(aMessage) {

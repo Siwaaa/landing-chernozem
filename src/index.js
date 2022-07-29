@@ -2,6 +2,7 @@ import { swiperPartners, initSwiperProjects, removeListenSlides } from "./compon
 import { toggelMenuMobile, closeMenu } from "./components/carousel/burger.js";
 
 const radiosFilter = document.querySelectorAll('input[type=radio][name="filter"]');
+
 let currentSwiperProjects = null
 let currentProjectID = null
 
