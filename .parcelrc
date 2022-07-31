@@ -6,6 +6,7 @@
   },
   "optimizers": {
     "*.css": ["@parcel/optimizer-css", "..."],
-    "*.html": ["@parcel/optimizer-htmlnano", "..."]
+    "*.html": ["@parcel/optimizer-htmlnano", "..."],
+    "*.{jpg,jpeg,png}": ["@parcel/optimizer-image", "..."]
   }
 }

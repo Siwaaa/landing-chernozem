@@ -178,7 +178,7 @@ function handlerLeaveMouse(event) {
 }
 
 function handlerSlideNext(event) {
-  swiperInstance = getCurrentSwiper()
+  const swiperInstance = getCurrentSwiper()
 
   if (swiperInstance.isEnd) return false
   swiperInstance.slideNext(1000)
@@ -191,7 +191,7 @@ function handlerSlideNext(event) {
 }
 
 function handlerSlidePrev(event) {
-  swiperInstance = getCurrentSwiper()
+  const swiperInstance = getCurrentSwiper()
 
   if (swiperInstance.isBeginning) return false
   swiperInstance.slidePrev(1000)
@@ -215,10 +215,10 @@ export function removeListenSlides(swiperInstance) {
 
 function helperResizLastSlide(slide) {
   const sw = getCurrentSwiper()
-
-  if (sw.slides[sw.slides.length - 1] === slide && sw.slides[0] !== slide) {
-    currentTranslate = new WebKitCSSMatrix(sw.$wrapperEl[0].style.transform).e
-
+  const currentTranslate = new WebKitCSSMatrix(sw.$wrapperEl[0].style.transform).e
+  
+  if (sw.slides[sw.slides.length - 1] === slide && currentTranslate < 1) {
+  // currentTranslate < 1 нужен для проверки помещаются ли все слайды в контаинер
     if (animationLastSlide) {
 
       if(sw.$wrapperEl[0].getAnimations().length < 2 && !animationLastSlide_exit) {
