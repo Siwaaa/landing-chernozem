@@ -130,6 +130,17 @@ function handlerEnterMouse(event) {
       })
 
       video.play()
+
+      currentItem.querySelector('.up').animate([
+        { opacity: '0', visibility: 'hidden' },
+        { opacity: '0.4', visibility: 'visible' }
+      ], {
+        delay: 1200,
+        duration: 1000,
+        iterations: 1,
+        easing: "ease-in-out",
+        fill: "forwards",
+      })
     } catch (error) {
       console.log('video play empty');
     }
@@ -172,6 +183,16 @@ function handlerLeaveMouse(event) {
     })
 
     video.pause()
+
+    currentItem.querySelector('.up').animate([
+      { opacity: '0.4', visibility: 'visible' },
+      { opacity: '0', visibility: 'hidden' }
+    ], {
+      duration: 200,
+      iterations: 1,
+      easing: "ease-in-out",
+      fill: "forwards",
+    })
   } catch (error) {
     console.log('video stop empty');
   }

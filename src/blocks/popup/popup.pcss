@@ -1,0 +1,48 @@
+.popup {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed; /* Stay in place */
+  z-index: 99999; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: var(--color-black); /* Black w/ opacity */
+  cursor: pointer;
+
+  &-close{
+    content: "";
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../../img/close.svg) center no-repeat;
+    z-index: 100;
+    transition: transform .5s ease-in-out;
+  }
+
+  &__container {
+    width: 100vw; 
+    height: calc(var(--vh, 1vh) * 100);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);   
+    cursor: auto;
+  }
+
+  &__body {
+    display: none;
+    position: relative;
+    height: 100%;
+    padding: 4% 3%;
+    text-align: center;
+
+    @media (--sm) {
+      padding: 15px;
+    }
+  }
+}

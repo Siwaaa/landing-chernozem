@@ -93,3 +93,35 @@ function changeHandlerFilter() {
 Array.prototype.forEach.call(radiosFilter, function (radio) {
   radio.addEventListener('change', changeHandlerFilter);
 });
+
+// popup
+const slides = document.querySelectorAll('.up')
+const popup = document.querySelector('.popup')
+const close = document.querySelector('.popup-close')
+
+slides.forEach(el => {
+  el.addEventListener('click', (e) => {
+    popup.animate([
+      { opacity: '0', visibility: 'hidden', transform: 'scale3d(0, 0, 0)' },
+      { opacity: '1', visibility: 'visible', transform: 'scale3d(1, 1, 1)' }
+    ], {
+      duration: 700,
+      iterations: 1,
+      easing: "ease",
+      fill: "forwards",
+    })
+    popup.querySelector('.popup__body').style.display = 'flex'
+  })
+})
+close.addEventListener('click', e => {
+  popup.animate([
+    { opacity: '1', visibility: 'visible', transform: 'scale3d(1, 1, 1)' },
+    { opacity: '0', visibility: 'hidden', transform: 'scale3d(0, 0, 0)' }
+  ], {
+    duration: 400,
+    iterations: 1,
+    easing: "ease-in-out",
+    fill: "forwards",
+  })
+  popup.querySelector('.popup__body').style.display = 'none'
+})
