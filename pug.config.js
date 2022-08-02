@@ -7,7 +7,14 @@ module.exports = {
         objects: [
           {
             name: 'Толя',
-            description: ''
+            description: '',
+            tags: [
+              'Фильмы',
+              'Нефильмы'
+            ],
+            poster: '',
+            video_30: '',
+            video_full: ''
           }
         ]
       }

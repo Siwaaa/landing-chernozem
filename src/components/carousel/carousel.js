@@ -185,10 +185,9 @@ function handlerSlideNext(event) {
   const swiperInstance = getCurrentSwiper()
 
   if (swiperInstance.isEnd) return false
-  swiperInstance.slideTo(swiperInstance.activeIndex + 2, 1000)
+  swiperInstance.slideNext(1000)
 
   intervalID = setInterval(e => {
-    console.log(swiperInstance.isEnd);
     if (swiperInstance.isEnd) clearInterval(intervalID)
     swiperInstance.slideNext(1000)
   }, 1500)
@@ -201,7 +200,6 @@ function handlerSlidePrev(event) {
   swiperInstance.slidePrev(1000)
 
   intervalID = setInterval(e => {
-    console.log(swiperInstance.isBeginning);
     if (swiperInstance.isBeginning) clearInterval(intervalID)
     swiperInstance.slidePrev(1000)
   }, 1500)
