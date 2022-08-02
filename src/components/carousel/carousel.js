@@ -122,7 +122,7 @@ function handlerEnterMouse(event) {
         { opacity: '0', visibility: 'hidden' },
         { opacity: '1', visibility: 'visible' }
       ], {
-        delay: 1000,
+        delay: 500,
         duration: 1000,
         iterations: 1,
         easing: "ease-in-out",
@@ -131,20 +131,12 @@ function handlerEnterMouse(event) {
 
       video.play()
 
-      currentItem.querySelector('.up').animate([
-        { opacity: '0', visibility: 'hidden' },
-        { opacity: '0.4', visibility: 'visible' }
-      ], {
-        delay: 1200,
-        duration: 1000,
-        iterations: 1,
-        easing: "ease-in-out",
-        fill: "forwards",
-      })
+      currentItem.querySelector('.up').style.opacity = 0.4
+
     } catch (error) {
       console.log('video play empty');
     }
-  }, 2000)
+  }, 2500)
 }
 
 function handlerLeaveMouse(event) {
@@ -184,15 +176,7 @@ function handlerLeaveMouse(event) {
 
     video.pause()
 
-    currentItem.querySelector('.up').animate([
-      { opacity: '0.4', visibility: 'visible' },
-      { opacity: '0', visibility: 'hidden' }
-    ], {
-      duration: 200,
-      iterations: 1,
-      easing: "ease-in-out",
-      fill: "forwards",
-    })
+    currentItem.querySelector('.up').style.opacity = 0
   } catch (error) {
     console.log('video stop empty');
   }
