@@ -166,11 +166,17 @@
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0;
+  visibility: hidden;
   z-index: 25;
   cursor: pointer;
-  transition: opacity .6s ease-in-out;
+  transition: opacity 1.2s ease-in-out;
+
+  &-active {
+    opacity: .4;
+    visibility: visible;
+  }
 
   &:hover {
-    opacity: 0.8 !important;
+    opacity: 0.8;
   }
 }

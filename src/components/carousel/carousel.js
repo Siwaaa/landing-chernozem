@@ -131,8 +131,7 @@ function handlerEnterMouse(event) {
 
       video.play()
 
-      currentItem.querySelector('.up').style.opacity = 0.4
-
+      currentItem.querySelector('.up').classList.add('up-active')
     } catch (error) {
       console.log('video play empty');
     }
@@ -176,7 +175,7 @@ function handlerLeaveMouse(event) {
 
     video.pause()
 
-    currentItem.querySelector('.up').style.opacity = 0
+    currentItem.querySelector('.up').classList.remove('up-active')
   } catch (error) {
     console.log('video stop empty');
   }
@@ -186,7 +185,7 @@ function handlerSlideNext(event) {
   const swiperInstance = getCurrentSwiper()
 
   if (swiperInstance.isEnd) return false
-  swiperInstance.slideNext(1000)
+  swiperInstance.slideTo(swiperInstance.activeIndex + 2, 1000)
 
   intervalID = setInterval(e => {
     console.log(swiperInstance.isEnd);
