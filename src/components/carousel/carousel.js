@@ -8,6 +8,7 @@ let animationVideo = null
 let animationLastSlide = null
 let animationLastSlide_exit = null
 let intervalID = null
+let timerUpAnimation = null
 const sizeSlide = -1 * getComputedStyle(document.querySelector('.projects__item'))
   .getPropertyValue('--w-project')
   .replace(/[^0-9]/g, "")
@@ -128,7 +129,10 @@ function handlerEnterMouse(event) {
         fill: "forwards",
       })
 
-      currentItem.querySelector('.up').classList.add('up-active')
+      timerUpAnimation = setTimeout(e => {
+        currentItem.querySelector('.up').classList.add('up-active') 
+      }, 2000)
+
     } catch (error) {
       console.log('video play empty');
     }
@@ -159,6 +163,7 @@ function handlerLeaveMouse(event) {
   })
 
   clearTimeout(animationVideo)
+  clearTimeout(timerUpAnimation)
 
   try {
     video.animate({
@@ -215,12 +220,12 @@ export function removeListenSlides(swiperInstance) {
 function helperResizLastSlide(slide) {
   const sw = getCurrentSwiper()
   const currentTranslate = new WebKitCSSMatrix(sw.$wrapperEl[0].style.transform).e
-  
+
   if (sw.slides[sw.slides.length - 1] === slide && currentTranslate < 1) {
-  // currentTranslate < 1 нужен для проверки помещаются ли все слайды в контаинер
+    // currentTranslate < 1 нужен для проверки помещаются ли все слайды в контаинер
     if (animationLastSlide) {
 
-      if(sw.$wrapperEl[0].getAnimations().length < 2 && !animationLastSlide_exit) {
+      if (sw.$wrapperEl[0].getAnimations().length < 2 && !animationLastSlide_exit) {
         animationLastSlide_exit = sw.$wrapperEl[0].animate({
           transform: `translate3d(${currentTranslate}px, 0px, 0px)`
         }, {
@@ -230,7 +235,7 @@ function helperResizLastSlide(slide) {
           iterations: 1,
           fill: 'forwards',
         })
-  
+
         animationLastSlide_exit.onfinish = () => {
           animationLastSlide.cancel()
           animationLastSlide_exit.cancel()
