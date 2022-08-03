@@ -97,10 +97,14 @@ Array.prototype.forEach.call(radiosFilter, function (radio) {
 // popup
 const slides = document.querySelectorAll('.up')
 const popup = document.querySelector('.popup')
-const close = document.querySelector('.popup-close')
+const popupVideo = popup.querySelector('video')
+const popupVideoSource = popup.querySelector('source')
+const closePopup = document.querySelector('.popup-close')
 
 slides.forEach(el => {
   el.addEventListener('click', (e) => {
+    const linkVideoFull = e.target.dataset.videofullsrc
+
     popup.animate([
       { opacity: '0', visibility: 'hidden', transform: 'scale3d(0, 0, 0)' },
       { opacity: '1', visibility: 'visible', transform: 'scale3d(1, 1, 1)' }
@@ -111,9 +115,14 @@ slides.forEach(el => {
       fill: "forwards",
     })
     popup.querySelector('.popup__body').style.display = 'flex'
+
+    popupVideoSource.setAttribute('src', linkVideoFull);
+    popupVideo.load();
+    popupVideo.play();
   })
 })
-close.addEventListener('click', e => {
+
+closePopup.addEventListener('click', e => {
   popup.animate([
     { opacity: '1', visibility: 'visible', transform: 'scale3d(1, 1, 1)' },
     { opacity: '0', visibility: 'hidden', transform: 'scale3d(0, 0, 0)' }
@@ -124,4 +133,5 @@ close.addEventListener('click', e => {
     fill: "forwards",
   })
   popup.querySelector('.popup__body').style.display = 'none'
+  popupVideo.pause();
 })
