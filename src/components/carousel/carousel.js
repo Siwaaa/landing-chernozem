@@ -117,25 +117,22 @@ function handlerEnterMouse(event) {
       videoSource.setAttribute('src', newSrc)
 
       video.load();
+      video.play();
 
       video.animate([
-        { opacity: '0', visibility: 'hidden' },
         { opacity: '1', visibility: 'visible' }
       ], {
-        delay: 500,
-        duration: 1000,
+        duration: 2000,
         iterations: 1,
-        easing: "ease-in-out",
+        easing: "cubic-bezier(0.64, 0, 0.78, 0)",
         fill: "forwards",
       })
-
-      video.play()
 
       currentItem.querySelector('.up').classList.add('up-active')
     } catch (error) {
       console.log('video play empty');
     }
-  }, 2500)
+  }, 2000)
 }
 
 function handlerLeaveMouse(event) {
