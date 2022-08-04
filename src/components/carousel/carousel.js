@@ -75,11 +75,6 @@ function listenCurrentSwiper(swiperInstance) {
   document.querySelector('.ll').addEventListener('mouseleave', (event) => {
     clearInterval(intervalID)
   })
-
-  // swiperInstance.on('slideChange', function () {
-
-  //   console.log('slide changed');
-  // })
 }
 
 function handlerEnterMouse(event) {
@@ -123,7 +118,7 @@ function handlerEnterMouse(event) {
       video.animate([
         { opacity: '1', visibility: 'visible' }
       ], {
-        duration: 2000,
+        duration: 1800,
         iterations: 1,
         easing: "cubic-bezier(0.64, 0, 0.78, 0)",
         fill: "forwards",
@@ -136,7 +131,7 @@ function handlerEnterMouse(event) {
     } catch (error) {
       console.log('video play empty');
     }
-  }, 2000)
+  }, 700)
 }
 
 function handlerLeaveMouse(event) {
