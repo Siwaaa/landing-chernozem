@@ -1,5 +1,6 @@
-import { swiperPartners, initSwiperProjects, removeListenSlides } from "./components/carousel/carousel.js";
-import { toggelMenuMobile, closeMenu } from "./components/carousel/burger.js";
+import { initSwiperProjects, removeListenSlides } from "./blocks/projects/carousel.js";
+import { swiperPartners } from "./blocks/partners/partners.js";
+import { toggelMenuMobile, closeMenu } from "./blocks/header/burger.js";
 
 const radiosFilter = document.querySelectorAll('input[type=radio][name="filter"]');
 

@@ -13,14 +13,6 @@ const sizeSlide = -1 * getComputedStyle(document.querySelector('.projects__item'
   .getPropertyValue('--w-project')
   .replace(/[^0-9]/g, "")
 
-export const swiperPartners = new Swiper('.partners__slider', {
-  grabCursor: true,
-  loop: true,
-  slidesPerView: 'auto',
-  spaceBetween: 40,
-  speed: 1500
-});
-
 export function initSwiperProjects(id) {
   const swiperElementDOM = document.getElementById(id)
 
@@ -251,25 +243,3 @@ function helperResizLastSlide(slide) {
     }
   }
 }
-
-// const alarm = {
-//   remind: function(aMessage) {
-//     alert(aMessage);
-//     this.timeoutID = undefined;
-//   },
-
-//   setup: function() {
-//     if (typeof this.timeoutID === 'number') {
-//       this.cancel();
-//     }
-
-//     this.timeoutID = setTimeout(function(msg) {
-//       this.remind(msg);
-//     }.bind(this), 1000, 'Wake up!');
-//   },
-
-//   cancel: function() {
-//     clearTimeout(this.timeoutID);
-//   }
-// };
-// window.addEventListener('click', () => alarm.setup() );

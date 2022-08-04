@@ -136,8 +136,8 @@ module.exports = {
             '3D персонажи',
           ],
           poster: './img/projects/rosneft.jpeg',
-          video_30: '',
-          video_full: ''
+          video_30: 'https://storage.yandexcloud.net/chernozyom/medvedi.webm',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/medvedi.webm'
         }
       ],
       'postprod' : [
