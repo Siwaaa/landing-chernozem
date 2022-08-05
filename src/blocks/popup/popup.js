@@ -1,7 +1,7 @@
 const slides = document.querySelectorAll('.up')
 const popup = document.querySelector('.popup')
 const popupVideo = popup.querySelector('video')
-const popupVideoSource = popup.querySelector('source')
+const popupVideoSource = popup.querySelectorAll('video > source')
 const closePopup = document.querySelector('.popup-close')
 let timerVideo = null
 
@@ -20,7 +20,10 @@ slides.forEach(el => {
     })
     popup.querySelector('.popup__body').style.display = 'flex'
 
-    popupVideoSource.setAttribute('src', linkVideoFull);
+    popupVideoSource.forEach(el => {
+      let type = el.type.includes('mp4') ? 'mp4' : 'webm'
+      el.setAttribute('src', linkVideoFull + '.' + type);
+    })
     popupVideo.load();
     popupVideo.play();
   })

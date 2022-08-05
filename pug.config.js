@@ -10,8 +10,8 @@ module.exports = {
             'Фильмы',
           ],
           poster: './img/projects/krovat_KF280EN.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/krovat_KF280EN.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/krovat_KF280EN.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/krovat_KF280EN',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/krovat_KF280EN'
         },
         {
           name: 'Тест-драйв элитного катера "Крис Крафт"',
@@ -20,8 +20,8 @@ module.exports = {
             'Фильмы',
           ],
           poster: './img/projects/burevestnik.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/burevestnik.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/burevestnik_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/burevestnik',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/burevestnik_big'
         },
         {
           name: 'Аспектус Фарма',
@@ -30,8 +30,8 @@ module.exports = {
             'Фильмы',
           ],
           poster: './img/projects/Aspectus-Pharma.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/Aspectus-Pharma.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Aspectus-Pharma_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/Aspectus-Pharma',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Aspectus-Pharma_big'
         },
         {
           name: 'Лонч сиропа для коктейлей с Александром Штифановым',
@@ -40,8 +40,8 @@ module.exports = {
             'Фильмы',
           ],
           poster: './img/projects/chuanbay.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/chuanbay.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/chuanbay_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/chuanbay',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/chuanbay_big'
         },
         {
           name: 'Фармасинтез',
@@ -50,8 +50,8 @@ module.exports = {
             'Фильмы',
           ],
           poster: './img/projects/Pharmasyntez-Gormony_3K.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/Pharmasyntez-Gormony_3K.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Pharmasyntez-Gormony_3K_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/Pharmasyntez-Gormony_3K',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Pharmasyntez-Gormony_3K_big'
         },
         {
           name: 'Рудоперерабатывающий завод ICC',
@@ -60,8 +60,8 @@ module.exports = {
             'Фильмы',
           ],
           poster: './img/projects/icc_metal_works.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/icc_metal_works.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/icc_metal_works_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/icc_metal_works',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/icc_metal_works_big'
         },
         {
           name: 'Продуктовый ролик Ставромед',
@@ -70,8 +70,8 @@ module.exports = {
             'Фильмы',
           ],
           poster: './img/projects/kreslo_komfort_m5.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5'
         },
       ],
       'animation' : [
@@ -82,8 +82,8 @@ module.exports = {
             'Анимация',
           ],
           poster: './img/projects/gett-delivery_magaz.jpeg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/gett-delivery_magaz.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/gett-delivery_magaz.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/gett-delivery_magaz',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/gett-delivery_magaz'
         },
         {
           name: 'Персонаж для "Газпром заправки"',
@@ -93,8 +93,8 @@ module.exports = {
             '3D персонажи'
           ],
           poster: './img/projects/maskots_4pub.jpeg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub'
         },
         {
           name: 'Фармасинтез',
@@ -103,8 +103,8 @@ module.exports = {
             'Анимация',
           ],
           poster: './img/projects/PharmaSyntez_2021_CUT_full.jpeg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/PharmaSyntez_2021_CUT_full.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/PharmaSyntez_2021_CUT_full_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/PharmaSyntez_2021_CUT_full',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/PharmaSyntez_2021_CUT_full_big'
         },
         {
           name: 'Проект НАУКА',
@@ -113,8 +113,8 @@ module.exports = {
             'Анимация',
           ],
           poster: './img/projects/uchenie.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/uchenie.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/uchenie_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/uchenie',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/uchenie_big'
         },
       ],
       'pers3d' : [
@@ -126,8 +126,8 @@ module.exports = {
             '3D персонажи'
           ],
           poster: './img/projects/maskots_4pub.jpeg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/maskots_4pub'
         },
         {
           name: 'Роснефть',
@@ -136,8 +136,8 @@ module.exports = {
             '3D персонажи',
           ],
           poster: './img/projects/rosneft.jpeg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/medvedi.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/medvedi.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/medvedi',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/medvedi'
         }
       ],
       'postprod' : [
@@ -149,8 +149,8 @@ module.exports = {
             'Реклама'
           ],
           poster: './img/projects/apache_no_twerk_music_video.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/apache_no_twerk_music_video.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/apache_no_twerk_music_video_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/apache_no_twerk_music_video',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/apache_no_twerk_music_video_big'
         },
         {
           name: 'Котекс Адушкина',
@@ -159,8 +159,8 @@ module.exports = {
             'Реклама',
           ],
           poster: './img/projects/adushkina.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/adushkina.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/adushkina_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/adushkina',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/adushkina_big'
         },
         {
           name: 'Фоксфорд',
@@ -169,8 +169,8 @@ module.exports = {
             'Реклама',
           ],
           poster: './img/projects/foxford_HD.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/foxford_HD.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/foxford_HD.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/foxford_HD',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/foxford_HD'
         },
         {
           name: 'Котекс Ивлеева',
@@ -179,8 +179,8 @@ module.exports = {
             'Реклама',
           ],
           poster: './img/projects/kotex_ivleeva_HD.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/kotex_ivleeva_HD.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/kotex_ivleeva_HD.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/kotex_ivleeva_HD',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/kotex_ivleeva_HD'
         },
         {
           name: 'Котекс Мелникова',
@@ -189,8 +189,8 @@ module.exports = {
             'Реклама',
           ],
           poster: './img/projects/melnikova.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/melnikova.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/melnikova.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/melnikova',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/melnikova'
         },
         {
           name: 'Котекс Модница',
@@ -200,8 +200,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/moda_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut'
         },
         {
           name: 'Котекс Семейная история',
@@ -211,8 +211,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/semya_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut'
         },
         {
           name: 'Котекс Спортивная история',
@@ -222,8 +222,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/sport_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut'
         },
         {
           name: 'Котекс Студентка',
@@ -233,8 +233,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/student_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut'
         },
         {
           name: 'Графика и цветокор для Нобазит',
@@ -244,8 +244,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/nobasit.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/nobasit.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/nobasit.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/nobasit',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/nobasit'
         }
       ],
       'colors' : [
@@ -256,8 +256,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/color_demo_reel.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/color_demo_reel.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/color_demo_reel_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/color_demo_reel',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/color_demo_reel_big'
         },
         {
           name: 'СЕМЕН СЛЕПАКОВ - ПОБАЗАРИМ ЗА КУЛЬТУРУ (ШНУРОВ DISS)',
@@ -267,8 +267,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/slepakov.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/slepakov.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/slepakov_big.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/slepakov',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/slepakov_big'
         },
         {
           name: 'Котекс Модница',
@@ -278,8 +278,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/moda_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut'
         },
         {
           name: 'Котекс Семейная история',
@@ -289,8 +289,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/semya_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut'
         },
         {
           name: 'Котекс Спортивная история',
@@ -300,8 +300,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/sport_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut'
         },
         {
           name: 'Котекс Студентка',
@@ -311,8 +311,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/student_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut'
         },
         {
           name: 'Пельмени Телятино',
@@ -321,8 +321,8 @@ module.exports = {
             'Цветокоррекция'
           ],
           poster: './img/projects/teletino.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/teletino.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/teletino.webm'
+          video_30: 'https://storage.yandexcloud.net/chernozyom/teletino',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/teletino'
         }
       ]
     }
