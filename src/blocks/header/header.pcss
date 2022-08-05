@@ -5,6 +5,23 @@
   flex-basis: 13%;
   padding-top: calc(0.25 * var(--container-padding-h));
   padding-bottom: calc(0.3 * var(--container-padding-h));
+
+  &__call {
+    padding: 12px 18px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid var(--color-white);
+    transition: background-color 1s ease, color 1s ease;
+
+    &:hover {
+      color: var(--color-black);
+      background-color: var(--color-white);
+    }
+
+    @media (--xl) {
+      display: none;
+    }
+  }
 }
 
 .logo {
@@ -148,8 +165,8 @@
                 visibility 1.1s easeOutCubic .4s;
 
     &.animation-menu {
-      height: 100vh; /* Поддержка старых браузером */
-      height: calc(var(--vh, 1vh) * 100);
+      height: 95vh; /* Поддержка старых браузером */
+      height: calc(var(--vh, 1vh) * 95);
       opacity: 1; 
       visibility: visible;
 

@@ -14,36 +14,6 @@ module.exports = {
           video_full: 'https://storage.yandexcloud.net/chernozyom/krovat_KF280EN.webm'
         },
         {
-          name: 'Аспектус Фарма',
-          description: 'Информационный фильм о фармацевтическом заводе "Аспектус Фарма". Награда: "Лучший информационный фильм 2021"',
-          tags: [
-            'Фильмы',
-          ],
-          poster: './img/projects/Aspectus-Pharma.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/Aspectus-Pharma.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Aspectus-Pharma_big.webm'
-        },
-        {
-          name: 'Фармасинтез',
-          description: 'Лонч новой линейки гормональных препаратов АО "Фармасинтез" для профессионального рынка',
-          tags: [
-            'Фильмы',
-          ],
-          poster: './img/projects/Pharmasyntez-Gormony_3K.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/Pharmasyntez-Gormony_3K.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Pharmasyntez-Gormony_3K_big.webm'
-        },
-        {
-          name: 'Продуктовый ролик Ставромед',
-          description: 'Продуктовый ролик для завода медицинского оборудования "Ставромед". Кресло для высокотехнологичной отечественной медицины "Ставромед Комфорт М5"',
-          tags: [
-            'Фильмы',
-          ],
-          poster: './img/projects/kreslo_komfort_m5.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5.webm',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5.webm'
-        },
-        {
           name: 'Тест-драйв элитного катера "Крис Крафт"',
           description: 'Тест-драйв элитного катера "Крис Крафт" в яхт-клубе "Буревестник"',
           tags: [
@@ -52,6 +22,16 @@ module.exports = {
           poster: './img/projects/burevestnik.jpg',
           video_30: 'https://storage.yandexcloud.net/chernozyom/burevestnik.webm',
           video_full: 'https://storage.yandexcloud.net/chernozyom/full/burevestnik_big.webm'
+        },
+        {
+          name: 'Аспектус Фарма',
+          description: 'Информационный фильм о фармацевтическом заводе "Аспектус Фарма". Награда: "Лучший информационный фильм 2021"',
+          tags: [
+            'Фильмы',
+          ],
+          poster: './img/projects/Aspectus-Pharma.jpg',
+          video_30: 'https://storage.yandexcloud.net/chernozyom/Aspectus-Pharma.webm',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Aspectus-Pharma_big.webm'
         },
         {
           name: 'Лонч сиропа для коктейлей с Александром Штифановым',
@@ -64,6 +44,16 @@ module.exports = {
           video_full: 'https://storage.yandexcloud.net/chernozyom/full/chuanbay_big.webm'
         },
         {
+          name: 'Фармасинтез',
+          description: 'Лонч новой линейки гормональных препаратов АО "Фармасинтез" для профессионального рынка',
+          tags: [
+            'Фильмы',
+          ],
+          poster: './img/projects/Pharmasyntez-Gormony_3K.jpg',
+          video_30: 'https://storage.yandexcloud.net/chernozyom/Pharmasyntez-Gormony_3K.webm',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/full/Pharmasyntez-Gormony_3K_big.webm'
+        },
+        {
           name: 'Рудоперерабатывающий завод ICC',
           description: 'Информационный фильм о рудоперерабатывающем заводе ICC',
           tags: [
@@ -72,7 +62,17 @@ module.exports = {
           poster: './img/projects/icc_metal_works.jpg',
           video_30: 'https://storage.yandexcloud.net/chernozyom/icc_metal_works.webm',
           video_full: 'https://storage.yandexcloud.net/chernozyom/full/icc_metal_works_big.webm'
-        }
+        },
+        {
+          name: 'Продуктовый ролик Ставромед',
+          description: 'Продуктовый ролик для завода медицинского оборудования "Ставромед". Кресло для высокотехнологичной отечественной медицины "Ставромед Комфорт М5"',
+          tags: [
+            'Фильмы',
+          ],
+          poster: './img/projects/kreslo_komfort_m5.jpg',
+          video_30: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5.webm',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/kreslo_komfort_m5.webm'
+        },
       ],
       'animation' : [
         {

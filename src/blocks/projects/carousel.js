@@ -112,13 +112,13 @@ function handlerEnterMouse(event) {
       ], {
         duration: 1800,
         iterations: 1,
-        easing: "cubic-bezier(0.64, 0, 0.78, 0)",
+        easing: "cubic-bezier(0.9, 0, 0.78, 0)",
         fill: "forwards",
       })
 
       timerUpAnimation = setTimeout(e => {
         currentItem.querySelector('.up').classList.add('up-active') 
-      }, 2000)
+      }, 300)
 
     } catch (error) {
       console.log('video play empty');
