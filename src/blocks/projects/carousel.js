@@ -100,10 +100,12 @@ function handlerEnterMouse(event) {
   animationVideo = setTimeout(() => {
     try {
       const video = currentItem.querySelector('.lazy-video')
-      const videoSource = currentItem.querySelector('.lazy-video > source')
-      const newSrc = videoSource.dataset.src
-      videoSource.setAttribute('src', newSrc)
-
+      const videoSource = currentItem.querySelectorAll('.lazy-video > source')
+      videoSource.forEach(el => {
+        let newSrc = el.dataset.src
+        el.setAttribute('src', newSrc)
+      })
+      
       video.load();
       video.play();
 
