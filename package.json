@@ -7,7 +7,7 @@
   "browserslist": "> 0.5%, last 5 versions, not dead",
   "scripts": {
     "serve": "parcel serve --port 8080 --open chrome",
-    "build": "rm -rf public_html/* && rm -rf .parcel-cache/* && parcel build --public-url ./ --dist-dir public_html && cp -a src/assets/. public_html"
+    "build": "rm -rf docs/* && rm -rf .parcel-cache/* && parcel build --public-url ./ --dist-dir docs && cp -a src/assets/. docs"
   },
   "devDependencies": {
     "@parcel/resolver-glob": "^2.2.1",
