@@ -324,6 +324,26 @@ module.exports = {
           video_30: 'https://storage.yandexcloud.net/chernozyom/teletino',
           video_full: 'https://storage.yandexcloud.net/chernozyom/teletino'
         }
+      ],
+      'awards' : [
+        {
+          name: 'Лучший информационный фильм 2021 года',
+          description: 'Лучший информационный фильм 2021 года — проект студии Чернозём: “Информационный фильм о фармацевтическом заводе “Аспектус Фарма”',
+          tags: [
+            'Фильмы',
+            'Награды'
+          ],
+          poster: './img/projects/awards.jpeg',
+        },
+        {
+          name: 'Лучший информационный фильм 2021 года',
+          description: 'Лучший информационный фильм 2021 года — проект студии Чернозём: “Информационный фильм о фармацевтическом заводе “Аспектус Фарма”',
+          tags: [
+            'Фильмы',
+            'Награды'
+          ],
+          poster: './img/projects/awards_2.jpeg',
+        },
       ]
     }
   }

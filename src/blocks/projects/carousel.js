@@ -97,35 +97,39 @@ function handlerEnterMouse(event) {
     fill: "forwards",
   })
 
-  animationVideo = setTimeout(() => {
-    try {
-      const video = currentItem.querySelector('.lazy-video')
-      const videoSource = currentItem.querySelectorAll('.lazy-video > source')
-      videoSource.forEach(el => {
-        let newSrc = el.dataset.src
-        el.setAttribute('src', newSrc)
-      })
-      
-      video.load();
-      video.play();
+  // Если у проекта имеется видео, то воспроизведем его
+  if (currentItem.querySelector('.up')) {
+    
+    animationVideo = setTimeout(() => {
+      try {
+        const video = currentItem.querySelector('.lazy-video')
+        const videoSource = currentItem.querySelectorAll('.lazy-video > source')
+        videoSource.forEach(el => {
+          let newSrc = el.dataset.src
+          el.setAttribute('src', newSrc)
+        })
 
-      video.animate([
-        { opacity: '1', visibility: 'visible' }
-      ], {
-        duration: 1800,
-        iterations: 1,
-        easing: "cubic-bezier(0.9, 0, 0.78, 0)",
-        fill: "forwards",
-      })
+        video.load();
+        video.play();
 
-      timerUpAnimation = setTimeout(e => {
-        currentItem.querySelector('.up').classList.add('up-active') 
-      }, 300)
+        video.animate([
+          { opacity: '1', visibility: 'visible' }
+        ], {
+          duration: 1800,
+          iterations: 1,
+          easing: "cubic-bezier(0.9, 0, 0.78, 0)",
+          fill: "forwards",
+        })
 
-    } catch (error) {
-      console.log('video play empty');
-    }
-  }, 700)
+        timerUpAnimation = setTimeout(e => {
+          currentItem.querySelector('.up').classList.add('up-active')
+        }, 300)
+
+      } catch (error) {
+        console.log('video play empty');
+      }
+    }, 700)
+  }
 }
 
 function handlerLeaveMouse(event) {
