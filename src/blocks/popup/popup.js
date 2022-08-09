@@ -4,30 +4,37 @@ const popupVideo = popup.querySelector('video')
 const popupVideoSource = popup.querySelectorAll('video > source')
 const closePopup = document.querySelector('.popup-close')
 let timerVideo = null
+const partnersItems = document.querySelectorAll('.partners__item')
 
 slides.forEach(el => {
+  el.addEventListener('click', (e) => openPopup(e.currentTarget.dataset.videofullsrc))
+})
+partnersItems.forEach(el => {
   el.addEventListener('click', (e) => {
-    const linkVideoFull = e.target.dataset.videofullsrc
-
-    popup.animate([
-      { opacity: '0', visibility: 'hidden', transform: 'translate3d(0, -100%, 0)' },
-      { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0, 0)' }
-    ], {
-      duration: 1400,
-      iterations: 1,
-      easing: "cubic-bezier(0.33, 1, 0.68, 1)",
-      fill: "forwards",
-    })
-    popup.querySelector('.popup__body').style.display = 'flex'
-
-    popupVideoSource.forEach(el => {
-      let type = el.type.includes('mp4') ? 'mp4' : 'webm'
-      el.setAttribute('src', linkVideoFull + '.' + type);
-    })
-    popupVideo.load();
-    popupVideo.play();
+    if (e.currentTarget.tagName == 'A') return false
+    openPopup(e.currentTarget.dataset.openclip)
   })
 })
+
+function openPopup(videofullsrc) {
+  popup.animate([
+    { opacity: '0', visibility: 'hidden', transform: 'translate3d(0, -100%, 0)' },
+    { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0, 0)' }
+  ], {
+    duration: 1400,
+    iterations: 1,
+    easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+    fill: "forwards",
+  })
+  popup.querySelector('.popup__body').style.display = 'flex'
+
+  popupVideoSource.forEach(el => {
+    let type = el.type.includes('mp4') ? 'mp4' : 'webm'
+    el.setAttribute('src', videofullsrc + '.' + type);
+  })
+  popupVideo.load();
+  popupVideo.play();
+}
 
 closePopup.addEventListener('click', e => {
   popup.animate([

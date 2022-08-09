@@ -1,0 +1,132 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+  width: 100%;
+  min-height: 100vh; /* Поддержка старых браузером */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+.contacts {
+  margin-bottom: 90px;
+  &__content {
+    text-align: center;
+  }
+  &__head {
+    padding: 10vh 0;
+    border-top: 1px solid var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+    margin-bottom: 90px;
+    font-size: 24px;
+
+    @media (--2xl) {
+      font-size: 20px;
+    }
+    @media (--sm) {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+  &__links {
+    @media (--sm) {
+      display: flex;
+      flex-direction: column;
+      width: min-content;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    & > a {
+      display: inline-flex;
+      align-items: center;
+
+      &:first-child {
+        margin-right: 60px;
+        @media (--sm) {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+      }
+
+      & > img {
+        margin-right: 20px;
+      }
+    }
+  }
+  &__form {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 var(--container-padding-w);
+    font-weight: 200;
+    font-size: 20px;
+
+    @media (--2xl) {
+      font-size: 16px;
+    }
+    @media (--sm) {
+      flex-direction: column;
+    }
+
+    &-left {
+      flex-basis: 60%;
+      margin-right: 60px;
+      text-align: left;
+      line-height: 1.5;
+      @media (--sm) {
+        flex-basis: fill;
+        margin-right: 0;
+        margin-bottom: 60px;
+      }
+
+      & > h3 {
+        margin-bottom: 10px;
+      }
+
+      & > textarea {
+        box-sizing: border-box;
+        width: 100%;
+        height: 260px;
+        border: 1px solid var(--color-white);
+        border-radius: 0;
+        color: var(--color-white);
+        font: inherit;
+        cursor: text;
+      }
+    }
+    &-right {
+      flex-basis: 40%;
+      display: flex;
+      flex-direction: column;
+      @media (--sm) {
+        flex-basis: fill;
+      }
+
+      & > input {
+        padding: 10px 0;
+        border-bottom: 1px solid var(--color-white);
+        margin-bottom: 30px;
+        border-radius: 0;
+        cursor: text;
+      }
+      & > button {
+        display: inline-block;
+        width: min-content;
+        padding: 4% 12%;
+        background-color: transparent;
+        border: 1px solid var(--color-white);
+        transition: background-color 1s ease, color 1s ease;
+    
+        &:hover {
+          color: var(--color-black);
+          background-color: var(--color-white);
+        }
+      }
+    }
+    & > h2 {
+      font-size: var(--fz-h2);
+      font-weight: 400;
+    }
+  }
+}

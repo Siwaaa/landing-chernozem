@@ -4,8 +4,10 @@ html(lang="ru")
     title Студия Чернозём 
 
     link(rel='stylesheet', href='./index.pcss')
+    style 
+      include contacts.pcss
 
-    script(src='./index.js' defer type="module")
+    script(src='./contacts.js' defer type="module")
 
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
@@ -18,10 +20,45 @@ html(lang="ru")
     link(rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png")
     link(rel="icon" type="image/x-icon" href="./assets/favicons/favicon.ico")
     meta(name="theme-color" content="#000000")
+
+    // Yandex.Metrika counter
+    script.
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(89902591, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+      });
+    <noscript><div><img src="https://mc.yandex.ru/watch/89902591" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    // /Yandex.Metrika counter
     
   body
-    main(id="app")
+    main
       include ./blocks/header/header.pug
+
+      section.contacts
+        .contacts__content
+          .contacts__head 
+            .contacts__links 
+              a(href="https://wa.me/79096506070?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BC%D0%BD%D0%B5%20%D0%BF%D0%BE%D0%BD%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B8%D1%81%D1%8C%20%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B%20%D0%BD%D0%B0%20%D0%B2%D0%B0%D1%88%D0%B5%D0%BC%20%D1%81%D0%B0%D0%B9%D1%82%D0%B5.%20%D0%A1%20%D0%BA%D0%B5%D0%BC%20%D1%8F%20%D0%BC%D0%BE%D0%B3%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D1%81%D0%B2%D0%BE%D0%B9%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%3F", target="_blank", rel="noopener noreferrer") 
+                img(src="./img/contacts/wa.svg", alt="WhatsApp")
+                span +7(909)650-60-70
+              a(href="mailto:alex@chernozem.pro") 
+                img(src="./img/contacts/email.svg", alt="email")
+                span alex@chernozem.pro
+          form(class="contacts__form" )
+            .contacts__form-left 
+              h3 Сообщение
+              textarea(name="message") 
+            .contacts__form-right 
+              input(type="text" name="name" placeholder="Имя" autocomplete="off" requred maxlength="18")
+              input(type="email" name="email" placeholder="Email" autocomplete="off" requred maxlength="28")
+              input(type="tel" name="phone" placeholder="Телефон" autocomplete="off" requred)
+              button(type="submit") Отправить
 
       include ./blocks/footer/footer.pug
       
