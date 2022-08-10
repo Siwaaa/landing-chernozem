@@ -116,6 +116,16 @@ module.exports = {
           video_30: 'https://storage.yandexcloud.net/chernozyom/uchenie',
           video_full: 'https://storage.yandexcloud.net/chernozyom/full/uchenie_big'
         },
+        {
+          name: 'Мультфильм ко Дню Победы',
+          description: 'Открытка-мультфильм ко Дню Победы',
+          tags: [
+            'Анимация',
+          ],
+          poster: './img/projects/ww_victory.jpg',
+          video_30: 'https://storage.yandexcloud.net/chernozyom/ww_victory',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/ww_victory'
+        },
       ],
       'pers3d' : [
         {
@@ -193,50 +203,6 @@ module.exports = {
           video_full: 'https://storage.yandexcloud.net/chernozyom/melnikova'
         },
         {
-          name: 'Котекс Модница',
-          description: 'Ролик для “Котекс” — Модница',
-          tags: [
-            'Реклама',
-            'Цветокоррекция'
-          ],
-          poster: './img/projects/moda_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/moda_DIRcut'
-        },
-        {
-          name: 'Котекс Семейная история',
-          description: 'Ролик для “Котекс” — Семейная история',
-          tags: [
-            'Реклама',
-            'Цветокоррекция'
-          ],
-          poster: './img/projects/semya_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/semya_DIRcut'
-        },
-        {
-          name: 'Котекс Спортивная история',
-          description: 'Монтаж, цветокоррекция, графика рекламного ролика “Котекс” с популярными блогерами',
-          tags: [
-            'Реклама',
-            'Цветокоррекция'
-          ],
-          poster: './img/projects/sport_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/sport_DIRcut'
-        },
-        {
-          name: 'Котекс Студентка',
-          description: 'Ролик для “Котекс” — Студентка',
-          tags: [
-            'Реклама',
-            'Цветокоррекция'
-          ],
-          poster: './img/projects/student_DIRcut.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/student_DIRcut'
-        },
-        {
           name: 'Графика и цветокор для Нобазит',
           description: 'Графика и цветокоррекция ролика для таблеток “Нобазит”',
           tags: [
@@ -246,6 +212,16 @@ module.exports = {
           poster: './img/projects/nobasit.jpg',
           video_30: 'https://storage.yandexcloud.net/chernozyom/nobasit',
           video_full: 'https://storage.yandexcloud.net/chernozyom/nobasit'
+        },
+        {
+          name: 'Экскурсия в лабораторию “Кёртис”',
+          description: 'Виртуальная экскурсия в лабораторию чая “Кёртис”',
+          tags: [
+            'Реклама'
+          ],
+          poster: './img/projects/curtis.jpg',
+          video_30: 'https://storage.yandexcloud.net/chernozyom/curtis',
+          video_full: 'https://storage.yandexcloud.net/chernozyom/curtis'
         }
       ],
       'colors' : [

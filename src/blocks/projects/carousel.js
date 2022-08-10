@@ -214,8 +214,8 @@ function helperResizLastSlide(slide) {
   const sw = getCurrentSwiper()
   const currentTranslate = new WebKitCSSMatrix(sw.$wrapperEl[0].style.transform).e
 
-  if (sw.slides[sw.slides.length - 1] === slide && currentTranslate < 1) {
-    // currentTranslate < 1 нужен для проверки помещаются ли все слайды в контаинер
+  if (sw.slides[sw.slides.length - 1] === slide && currentTranslate < 201) {
+    // currentTranslate < 201 (ср ширина слайдов) нужен для проверки помещаются ли все слайды в контаинер
     if (animationLastSlide) {
 
       if (sw.$wrapperEl[0].getAnimations().length < 2 && !animationLastSlide_exit) {
