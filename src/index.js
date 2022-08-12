@@ -35,13 +35,35 @@ function replaceImgForLazy() {
 }
 function checkedFilter() {
   // запустить спинер пока не отрисуется swiper
-  radiosFilter.forEach(e => {
-    if (e.checked) {
-      currentProjectID = e.value
-      currentSwiperProjects = initSwiperProjects(e.value)
-      // завершить спинер
+  const paramsURL = new URLSearchParams(window.location.search)
+  if (paramsURL.has('filter')) {
+    const radioName = paramsURL.get('filter')
+    try {
+      currentProjectID = radioName
+      currentSwiperProjects = initSwiperProjects(radioName)
+      for (let e of radiosFilter) {
+        if (e.value == radioName) {
+          e.checked = true;
+          break;
+        }
+      }
+    } catch (error) {
+      radiosFilter.forEach(e => {
+        if (e.checked) {
+          currentProjectID = e.value
+          currentSwiperProjects = initSwiperProjects(e.value)
+        }
+      })
     }
-  })
+  } else {
+    radiosFilter.forEach(e => {
+      if (e.checked) {
+        currentProjectID = e.value
+        currentSwiperProjects = initSwiperProjects(e.value)
+      }
+    })
+  }
+  // завершить спинер
 }
 function fixVH() {
   // Решение проблемы с высотой моб браузеров
@@ -60,8 +82,8 @@ function changeHandlerFilter() {
       const elementSliderActive = document.getElementById(currentProjectID)
 
       const animateID = elementSliderActive.animate([
-        { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)'},
-        { opacity: '0', visibility: 'hidden', transform: 'translate3d(-25%, 0,0)'},
+        { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0,0)' },
+        { opacity: '0', visibility: 'hidden', transform: 'translate3d(-25%, 0,0)' },
       ], {
         duration: 600,
         iterations: 1,

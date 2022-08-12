@@ -20,11 +20,11 @@ function fixVH() {
 
 function changeHandlerFilter() {
   if (this.value) {
-    location.href = "/"
+    location.href = "/?filter=" + this.value
   }
 }
 Array.prototype.forEach.call(radiosFilter, function (radio) {
-  radio.addEventListener('change', changeHandlerFilter);
+  radio.addEventListener('click', changeHandlerFilter);
 });
 
 /*

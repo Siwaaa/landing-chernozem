@@ -115,17 +115,7 @@ module.exports = {
           poster: './img/projects/uchenie.jpg',
           video_30: 'https://storage.yandexcloud.net/chernozyom/uchenie',
           video_full: 'https://storage.yandexcloud.net/chernozyom/full/uchenie_big'
-        },
-        {
-          name: 'Мультфильм ко Дню Победы',
-          description: 'Открытка-мультфильм ко Дню Победы',
-          tags: [
-            'Анимация',
-          ],
-          poster: './img/projects/ww_victory.jpg',
-          video_30: 'https://storage.yandexcloud.net/chernozyom/ww_victory',
-          video_full: 'https://storage.yandexcloud.net/chernozyom/ww_victory'
-        },
+        }
       ],
       'pers3d' : [
         {
