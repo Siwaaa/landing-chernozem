@@ -79,7 +79,7 @@ function initLang() {
     || window.navigator.systemLanguage 
     || window.navigator.userLanguage
 
-  langIsRu = langBrowser.toLowerCase().includes('ru')
+  const langIsRu = langBrowser.toLowerCase().includes('ru')
   // langIsRu ? location.href = '/' : location.href = '/en/'
 
   // прослушиватель кликов 
