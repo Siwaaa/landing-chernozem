@@ -31,6 +31,12 @@ header.header.container
       li
         input(type="radio" id="filter_6" name="filter" value="awards")
         label(for="filter_6") Awards
+      li
+        label 
+          a(href="../en/about.pug") About us
+  .lang 
+    button#lang-ru RU
+    button#lang-en.active EN
   a(href="../en/contacts.pug" class="header__call") Contact
   .filter-mobile
     .filter-trigger
@@ -57,5 +63,7 @@ header.header.container
         li
           input(type="radio" id="filter_mob_6" name="filter" value="awards")
           label(for="filter_mob_6") Awards
+        li
+          a(href="../en/about.pug") About us
         li
           a(href="../en/contacts.pug") Contact

@@ -5,7 +5,8 @@
     "/src/index.pug",
     "/src/contacts.pug",
     "/src/en/index.pug",
-    "/src/en/contacts.pug"
+    "/src/en/contacts.pug",
+    "/src/en/about.pug"
   ],
   "browserslist": "> 0.5%, last 5 versions, not dead",
   "scripts": {

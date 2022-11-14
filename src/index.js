@@ -24,6 +24,7 @@ function startedCheck() {
   toggelMenuMobile()
   checkedFilter()
   fixVH()
+  initLang()
 }
 
 function replaceImgForLazy() {
@@ -70,6 +71,32 @@ function fixVH() {
   // with css: height = calc(var(--vh, 1vh) * 100);
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+function initLang() {
+  // модуль проверки ip 
+  const langBrowser = window.navigator.language 
+    || window.navigator.systemLanguage 
+    || window.navigator.userLanguage
+
+  langIsRu = langBrowser.toLowerCase().includes('ru')
+  // langIsRu ? location.href = '/' : location.href = '/en/'
+
+  // прослушиватель кликов 
+  const langBtns = [
+    document.getElementById('lang-ru'), 
+    document.getElementById('lang-en')
+  ]
+
+  langBtns.forEach(el => {
+    el.addEventListener('click', e => {
+      if(e.target.id == 'lang-ru') {
+        location.href = '/'
+      } else {
+        location.href = '/en/'
+      }
+    })
+  })
 }
 
 /*

@@ -9,6 +9,7 @@ const radiosFilter = document.querySelectorAll('input[type=radio][name="filter"]
 function startedCheck() {
   toggelMenuMobile()
   fixVH()
+  handlerLang()
 }
 
 function fixVH() {
@@ -16,6 +17,23 @@ function fixVH() {
   // with css: height = calc(var(--vh, 1vh) * 100);
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+function handlerLang() {
+  const langBtns = [
+    document.getElementById('lang-ru'), 
+    document.getElementById('lang-en')
+  ]
+
+  langBtns.forEach(el => {
+    el.addEventListener('click', e => {
+      if(e.target.id == 'lang-ru') {
+        location.href = '/'
+      } else {
+        location.href = '/en/'
+      }
+    })
+  })
 }
 
 function changeHandlerFilter() {
