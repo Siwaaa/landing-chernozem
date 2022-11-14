@@ -1,0 +1,61 @@
+//- - var menuItems = [
+//-   'Фильмы',
+//-   'Реклама',
+//-   'Анимация',
+//-   '3D персонажи',
+//-   'Цветокоррекция',
+//-   'Награды',
+//- ];
+
+header.header.container
+  .logo
+    h2 Chernozem Studio
+    p production <br> post-production
+  .filter 
+    ul.filter__nav
+      li
+        input(type="radio" id="filter_3" name="filter" value="filming" checked)
+        label(for="filter_3") Films
+      li
+        input(type="radio" id="filter_1" name="filter" value="animation")
+        label(for="filter_1") Animation
+      li
+        input(type="radio" id="filter_2" name="filter" value="pers3d")
+        label(for="filter_2") 3D personages
+      li
+        input(type="radio" id="filter_4" name="filter" value="postprod")
+        label(for="filter_4") Promotion
+      li
+        input(type="radio" id="filter_5" name="filter" value="colors")
+        label(for="filter_5") Color correction
+      li
+        input(type="radio" id="filter_6" name="filter" value="awards")
+        label(for="filter_6") Awards
+  a(href="../en/contacts.pug" class="header__call") Contact
+  .filter-mobile
+    .filter-trigger
+      .filter-mobile__line.nav-line__up
+      .filter-mobile__line.nav-line__center
+      .filter-mobile__line.nav-line__down
+    .filter-menu 
+      ul.filter-menu__content 
+        li
+          input(type="radio" id="filter_mob_3" name="filter" value="filming")
+          label(for="filter_mob_3") Films
+        li
+          input(type="radio" id="filter_mob_1" name="filter" value="animation")
+          label(for="filter_mob_1") Animation
+        li
+          input(type="radio" id="filter_mob_2" name="filter" value="pers3d")
+          label(for="filter_mob_2") 3D personages
+        li
+          input(type="radio" id="filter_mob_5" name="filter" value="postprod")
+          label(for="filter_mob_5") Promotion
+        li
+          input(type="radio" id="filter_mob_4" name="filter" value="colors")
+          label(for="filter_mob_4") Color correction
+        li
+          input(type="radio" id="filter_mob_6" name="filter" value="awards")
+          label(for="filter_mob_6") Awards
+        li
+          a(href="../en/contacts.pug") Contact

@@ -1,0 +1,24 @@
+//- data in: pug.config.js
+section.projects
+  .rr.oo
+  .ll.oo
+  each projects, idProject in listProjects
+    div(class="projects__slider swiper" id=idProject)
+      .projects__content.swiper-wrapper
+
+        each val in projects
+          .projects__item.swiper-slide
+            if val.video_full
+              div(class="up" data-videofullsrc=val.video_full)
+            .projects__text
+              h2.projects__title=val.name_en
+              p.projects__desc=val.description_en
+              ul.projects__tags
+                each tag in val.tags_en
+                  li=`#${tag}`
+            img(src='data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=' data-src, alt="", class="swiper-lazy")
+            noscript
+              img(src="." + val.poster)
+            video(class="projects__video lazy-video" muted playsinline loop preload="none")
+              source(src="../videos/blank.webm" data-src=`${val.video_30}.webm` type="video/webm")
+              source(src="../videos/blank.mp4" data-src=`${val.video_30}.mp4` type="video/mp4")

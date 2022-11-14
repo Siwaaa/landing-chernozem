@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "source": [
     "/src/index.pug",
-    "/src/contacts.pug"
+    "/src/contacts.pug",
+    "/src/en/index.pug",
+    "/src/en/contacts.pug"
   ],
   "browserslist": "> 0.5%, last 5 versions, not dead",
   "scripts": {

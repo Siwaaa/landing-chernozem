@@ -20,7 +20,8 @@ function fixVH() {
 
 function changeHandlerFilter() {
   if (this.value) {
-    location.href = "/?filter=" + this.value
+    const currentLang = location.href.includes('en') ? '/en/' : '/'
+    location.href = currentLang + "?filter=" + this.value
   }
 }
 Array.prototype.forEach.call(radiosFilter, function (radio) {
@@ -51,12 +52,24 @@ forms.forEach(el => {
     const email = e.target.elements[2].value;
     const phone = e.target.elements[3].value;
 
+    const handlerReqMessage = {
+      ru: {
+        good: "<h2> Ваша заявка успешно отправлена! </h2>",
+        error: "Пожалуйста, проверьте правильность заполненных полей"
+      },
+      en: {
+        good: "<h2> Your application has been successfully submitted! </h2>",
+        error: "Please, check if all fields are filled correctly."
+      }
+    }
+    const currentLang = location.href.includes('en') ? 'en' : 'ru'
+
     if (name && email && (phone.length > 15)) {
       sendForm(el)
-        .then((data) => el.innerHTML = "<h2> Ваша заявка успешно отправлена! </h2>")
+        .then((data) => el.innerHTML = handlerReqMessage[currentLang].good)
         .catch(er => console.log('Ошибка отправки данных\n' + er))
     } else {
-      alert("Пожалуйста, проверьте правильность заполненных полей")
+      alert(handlerReqMessage[currentLang].error)
     }
   })
 })
