@@ -74,13 +74,25 @@ function fixVH() {
 }
 
 function initLang() {
-  // модуль проверки ip 
-  const langBrowser = window.navigator.language 
+  // модуль проверки языка браузера 
+  if (!localStorage.getItem('checkedLang')) {
+    const langBrowser = window.navigator.language 
     || window.navigator.systemLanguage 
     || window.navigator.userLanguage
 
-  const langIsRu = langBrowser.toLowerCase().includes('ru')
-  // langIsRu ? location.href = '/' : location.href = '/en/'
+    const langIsRu = langBrowser.toLowerCase().includes('ru')
+
+    localStorage.setItem('checkedLang', true)
+    localStorage.setItem('langSite', langIsRu ? 'ru' : 'en')
+
+    langIsRu ? location.href = '/' : location.href = '/en/'
+
+    // if(localStorage.getItem('langSite') == 'en') {
+    //   location.href.includes('en') ? true : location.href = '/en/'
+    // } else if (localStorage.getItem('langSite') == 'ru')  {
+    //   location.href.includes('en') ? location.href = '/' : false
+    // }
+  }
 
   // прослушиватель кликов 
   const langBtns = [
