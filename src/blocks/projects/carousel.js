@@ -105,8 +105,9 @@ function handlerEnterMouse(event) {
         const video = currentItem.querySelector('.lazy-video')
         const videoSource = currentItem.querySelectorAll('.lazy-video > source')
         videoSource.forEach(el => {
-          let newSrc = el.dataset.src
-          el.setAttribute('src', newSrc)
+          let type = el.type.includes('mp4') ? 'mp4' : 'webm'
+          let newSrc = location.href.includes('en') && el.dataset.srcEn ? el.dataset.srcEn : el.dataset.src
+          el.setAttribute('src', newSrc + '.' + type)
         })
 
         video.load();

@@ -9,7 +9,7 @@ section.projects
         each val in projects
           .projects__item.swiper-slide
             if val.video_full
-              div(class="up" data-videofullsrc=val.video_full)
+              div(class="up" data-videofullsrc=val.video_full data-videofullsrc-en=val.video_full_en)
             .projects__text
               h2.projects__title=val.name_en
               p.projects__desc=val.description_en
@@ -20,5 +20,15 @@ section.projects
             noscript
               img(src="." + val.poster)
             video(class="projects__video lazy-video" muted playsinline loop preload="none")
-              source(src="../videos/blank.webm" data-src=`${val.video_30}.webm` type="video/webm")
-              source(src="../videos/blank.mp4" data-src=`${val.video_30}.mp4` type="video/mp4")
+              source(
+                src="../videos/blank.webm" 
+                data-src=val.video_30 
+                data-src-en=val.video_30_en 
+                type="video/webm"
+              )
+              source(
+                src="../videos/blank.mp4" 
+                data-src=val.video_30 
+                data-src-en=val.video_30_en 
+                type="video/mp4"
+              )

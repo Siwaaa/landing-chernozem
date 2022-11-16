@@ -7,7 +7,7 @@ let timerVideo = null
 const partnersItems = document.querySelectorAll('.partners__item')
 
 slides.forEach(el => {
-  el.addEventListener('click', (e) => openPopup(e.currentTarget.dataset.videofullsrc))
+  el.addEventListener('click', (e) => openPopup(e.currentTarget.dataset.videofullsrc, e.currentTarget.dataset.videofullsrcEn))
 })
 partnersItems.forEach(el => {
   el.addEventListener('click', (e) => {
@@ -16,7 +16,7 @@ partnersItems.forEach(el => {
   })
 })
 
-function openPopup(videofullsrc) {
+function openPopup(videofullsrc, videofullsrcEn) {
   popup.animate([
     { opacity: '0', visibility: 'hidden', transform: 'translate3d(0, -100%, 0)' },
     { opacity: '1', visibility: 'visible', transform: 'translate3d(0, 0, 0)' }
@@ -30,7 +30,8 @@ function openPopup(videofullsrc) {
 
   popupVideoSource.forEach(el => {
     let type = el.type.includes('mp4') ? 'mp4' : 'webm'
-    el.setAttribute('src', videofullsrc + '.' + type);
+    const langPrefix = location.href.includes('en') && videofullsrcEn ? '_en' : ''
+    el.setAttribute('src', videofullsrc + langPrefix + '.' + type);
   })
   popupVideo.load();
   popupVideo.play();
